@@ -4,6 +4,7 @@ project:
     - index.qmd
     - Overview.qmd
     - Prerequisites/Prerequisites.qmd
+    - Day1.qmd
 
 profile:
   default: en
@@ -26,9 +27,12 @@ website:
         text: Overview
       - href: Prerequisites/Prerequisites.qmd
         text: Prerequisites
+      - href: Day1.qmd
+        text: Day1
+
     tools:
       - icon: github
-        href: https://github.com/Sdemaeyer2/ABAR_Turku2025
+        href: https://github.com/Sdemaeyer2/ABAR_TURKU_2025
 
 format:
   html:
