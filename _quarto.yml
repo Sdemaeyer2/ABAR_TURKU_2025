@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - Overview.qmd
+    - Prerequisites/Prerequisites.qmd
 
 profile:
   default: en
@@ -18,9 +22,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: 01_Overview.qmd
+      - href: Overview.qmd
         text: Overview
-      - about.qmd
+      - href: Prerequisites/Prerequisites.qmd
+        text: Prerequisites
     tools:
       - icon: github
         href: https://github.com/Sdemaeyer2/ABAR_Turku2025
