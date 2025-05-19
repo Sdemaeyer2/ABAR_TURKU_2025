@@ -2,120 +2,211 @@
   {
     "objectID": "Day1.html",
     "href": "Day1.html",
-    "title": "Day 1",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
     "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results."
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
   },
   {
     "objectID": "Day1.html#outline",
     "href": "Day1.html#outline",
-    "title": "Day 1",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
     "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results."
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
   },
   {
     "objectID": "Day1.html#materials",
     "href": "Day1.html#materials",
-    "title": "Day 1",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
     "section": "Materials",
-    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as)."
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Day1"
+    ]
   },
   {
     "objectID": "Day1.html#references-and-resources",
     "href": "Day1.html#references-and-resources",
-    "title": "Day 1",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
     "section": "References and resources",
-    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here"
+    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
+    "crumbs": [
+      "Day1"
+    ]
   },
   {
     "objectID": "Overview.html",
     "href": "Overview.html",
     "title": "Overview",
     "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages."
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "crumbs": [
+      "Overview"
+    ]
   },
   {
     "objectID": "Overview.html#schedule",
     "href": "Overview.html#schedule",
     "title": "Overview",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (9-11 am)\n\n\n\nWednesday 11th of June (9-11 am)\n\n\n\nFriday 13th of June (9-11 am)\n\n\n\nMonday 16th of June (9-11 amà"
+    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (9-11 am)\n\n\n\nWednesday 11th of June (9-11 am)\n\n\n\nFriday 13th of June (9-11 am)\n\n\n\nMonday 16th of June (9-11 am)",
+    "crumbs": [
+      "Overview"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "title": "Welcome",
     "section": "",
-    "text": "This site bundles all the material used for the course ABAR_Turku2025.\nAll materials for the course can be downloaded via the github page .\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be\n\n\n\n Back to top"
+    "text": "This site bundles all the material used for the course Applied Bayesian Analyses with R (Turku 2025).\nAll materials for the course can be downloaded via the github page .\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be\n\n\n\n Back to top",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html",
     "href": "Prerequisites/Prerequisites.html",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "",
-    "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare."
+    "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare.",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
     "href": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "CmdStan & CmdStanR",
-    "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation."
+    "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation.",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#brms",
     "href": "Prerequisites/Prerequisites.html#brms",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "brms",
-    "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)"
+    "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#tidyverse",
     "href": "Prerequisites/Prerequisites.html#tidyverse",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "tidyverse",
-    "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/"
+    "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#ggplot2",
     "href": "Prerequisites/Prerequisites.html#ggplot2",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "ggplot2",
-    "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!"
+    "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#patchwork",
     "href": "Prerequisites/Prerequisites.html#patchwork",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "patchwork",
-    "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own."
+    "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own.",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#tidybayes",
     "href": "Prerequisites/Prerequisites.html#tidybayes",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "tidybayes",
-    "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses."
+    "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses.",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#bayesplot",
     "href": "Prerequisites/Prerequisites.html#bayesplot",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "bayesplot",
-    "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2)."
+    "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2).",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#the-pipe",
     "href": "Prerequisites/Prerequisites.html#the-pipe",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "The pipe",
-    "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …"
+    "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …",
+    "crumbs": [
+      "Prerequisites"
+    ]
   },
   {
     "objectID": "Prerequisites/Prerequisites.html#dplyr-verbs",
     "href": "Prerequisites/Prerequisites.html#dplyr-verbs",
     "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
     "section": "dplyr verbs",
-    "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()"
+    "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Day2.html",
+    "href": "Day2.html",
+    "title": "Day 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#outline",
+    "href": "Day2.html#outline",
+    "title": "Day 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#materials",
+    "href": "Day2.html#materials",
+    "title": "Day 2: the WAMBS",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#references-and-resources",
+    "href": "Day2.html#references-and-resources",
+    "title": "Day 2: the WAMBS",
+    "section": "References and resources",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
+    "crumbs": [
+      "Day2"
+    ]
   }
 ]

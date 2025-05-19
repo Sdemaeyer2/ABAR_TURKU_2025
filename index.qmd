@@ -1,8 +1,8 @@
 ---
-title: "Applied Bayesian Analyses with R (Turku 2025)"
+title: "Welcome"
 ---
 
-This site bundles all the material used for the course [ABAR_Turku2025]{style="color: #447099"}.
+This site bundles all the material used for the course [Applied Bayesian Analyses with R (Turku 2025)]{style="color: #447099"}.
 
 All materials for the course can be downloaded via <a href="https://github.com/Sdemaeyer2/ABAR_TURKU_2025" target="_blank">the github page </a>. 
 

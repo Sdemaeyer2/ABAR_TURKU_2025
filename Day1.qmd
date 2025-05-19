@@ -1,11 +1,11 @@
 ---
-title: "Day 1"
+title: "Day 1: the prior, the likelihood, and the posterior"
 format: html
 ---
 
 ## Outline
 
-In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior. 
+In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the **prior**, the **likelihood**, and the **posterior**. 
 
 Then, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.
 
