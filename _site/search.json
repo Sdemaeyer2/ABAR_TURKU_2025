@@ -1,5 +1,15 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is that I’m also an advocate of Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\n\n\n\n Back to top",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
     "objectID": "Day2.html",
     "href": "Day2.html",
     "title": "Day 2: the WAMBS",
@@ -207,6 +217,36 @@
     "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
     "crumbs": [
       "Day1"
+    ]
+  },
+  {
+    "objectID": "Day3.html",
+    "href": "Day3.html",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#outline",
+    "href": "Day3.html#outline",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#references-and-resources",
+    "href": "Day3.html#references-and-resources",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "References and resources",
+    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
+    "crumbs": [
+      "Day3"
     ]
   }
 ]

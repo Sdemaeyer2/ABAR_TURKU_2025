@@ -6,6 +6,8 @@ project:
     - Prerequisites/Prerequisites.qmd
     - Day1.qmd
     - Day2.qmd
+    - Day3.qmd
+    - about.qmd
 
 profile:
   default: en
@@ -13,7 +15,6 @@ profile:
 # WEBSITE ARCHITECTURE
 
 website:
-  title: "Applied Bayesian Analyses with R (Turku 2025)"
   favicon: "abar-favicon.png"
   page-navigation: true
   back-to-top-navigation: true
@@ -21,19 +22,18 @@ website:
   page-footer:
     right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
     left: "&copy; CC-By Sven De Maeyer, 2025"
-
-  navbar:
+  
+  sidebar:
+    logo: "Abar_Logo_2025_T.png"
+    pinned: true
+    align: center
+    background: "#e9f3fa"
     search: true
-    background: white
     tools:
       - icon: github
         href: https://github.com/Sdemaeyer2/ABAR_TURKU_2025
-  
-  sidebar:
-    background: "#e9f3fa"
-    logo: "Abar_Logo_2025_T.png"
+
     style: "docked"
-    search: true
     contents:
       - href: index.qmd
         text: Home
@@ -45,6 +45,12 @@ website:
         text: Day1
       - href: Day2.qmd
         text: Day2
+      - href: Day3.qmd
+        text: Day3
+
+      - href: about.qmd
+        text: About me
+
 format:
   html:
     theme: cosmo
