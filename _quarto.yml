@@ -1,0 +1,36 @@
+project:
+  type: website
+
+profile:
+  default: en
+
+# WEBSITE ARCHITECTURE
+
+website:
+  title: "Applied Bayesian Analyses with R (Turku 2025)"
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  navbar:
+    background: white
+    search: true
+    title: false
+    left:
+      - href: index.qmd
+        text: Home
+      - href: 01_Overview.qmd
+        text: Overview
+      - about.qmd
+    tools:
+      - icon: github
+        href: https://github.com/Sdemaeyer2/ABAR_Turku2025
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+author: Sven De Maeyer
+title-block-banner: "#e9f3fa"
+

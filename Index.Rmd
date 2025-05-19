@@ -23,7 +23,7 @@ Instructor:
 
 ---
 
-All materials for the course can be downloaded via <a href="https://github.com/Sdemaeyer2/ABAR_Geneva24" target="_blank">the github page </a>. 
+All materials for the course can be downloaded via <a href="https://github.com/Sdemaeyer2/ABAR_Turku2025" target="_blank">the github page </a>. 
 
 ---
 
@@ -47,10 +47,10 @@ Participants will be introduced to a workflow for Bayesian analyses in the open-
 ### Rooms
 | When?  | Where    |
 |:--------|:-------|
-| Tuesday | H4-02-A|
-| Wednesday | H8-01-F|
-| Thursday | H4-02-A|
-| Friday | H4-02-A|
+| Monday 9th of June (9-11 am) | |
+| Wednesday 11th of June (9-11 am) | |
+| Friday 13th of June (9-11 am) | |
+| Monday 16th of June (9-11 amà | |
 
 # Preparation
 
@@ -221,7 +221,7 @@ starwars |>
   ) + geom_point()
 ```
 
-# Tuesday
+# Day 1
 
 ## Column 1
 
@@ -257,7 +257,7 @@ Interactive tool demonstrating MCMC sampling:
 `brms` homepage: <a href="https://paul-buerkner.github.io/brms/" target="blank"> click here </a>
 
 
-# Wedsnesday
+# Day 2
 
 ## Column 1
 
@@ -288,7 +288,7 @@ Alternative for the WAMBS is the BARG:
 Kruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. <a href=https://doi.org/10.1038/s41562-021-01177-7" target="blank">https://doi.org/10.1038/s41562-021-01177-7 </a>
 
 
-# Thursday
+# Day 3
 
 ## Column 1
 
@@ -327,7 +327,7 @@ Papers on the use of quantile dotplots:
 - <a href="https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf" target="blank"> https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf </a>
 
 
-# Friday
+# DAy 4
 
 ## Column 1
 
