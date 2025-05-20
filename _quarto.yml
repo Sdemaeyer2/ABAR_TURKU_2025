@@ -2,7 +2,6 @@ project:
   type: website
   render:
     - index.qmd
-    - Overview.qmd
     - Prerequisites/Prerequisites.qmd
     - Day1.qmd
     - Day2.qmd
@@ -37,8 +36,6 @@ website:
     contents:
       - href: index.qmd
         text: Home
-      - href: Overview.qmd
-        text: Overview
       - href: Prerequisites/Prerequisites.qmd
         text: Prerequisites
       - href: Day1.qmd
