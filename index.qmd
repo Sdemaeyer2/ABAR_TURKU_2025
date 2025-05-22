@@ -22,6 +22,3 @@ Participants will be introduced to a workflow for Bayesian analyses in the open-
 
 This site bundles all the material used for the course. Or you can download all the materials on <a href="https://github.com/Sdemaeyer2/ABAR_TURKU_2025" target="_blank">the github page </a>. 
 
-## Contact
-
-Questions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be

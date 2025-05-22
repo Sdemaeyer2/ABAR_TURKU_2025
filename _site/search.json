@@ -4,49 +4,149 @@
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is that I’m also an advocate of Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\n\n\n\n Back to top",
+    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\nI wish you a pleasant learning journey!",
     "crumbs": [
       "About me"
     ]
   },
   {
-    "objectID": "Day2.html",
-    "href": "Day2.html",
-    "title": "Day 2: the WAMBS",
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About me",
+    "section": "Contact",
+    "text": "Contact\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
+    "objectID": "WAMBS.html",
+    "href": "WAMBS.html",
+    "title": "WAMBS template",
     "section": "",
-    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
     "crumbs": [
-      "Day2"
+      "WAMBS template"
     ]
   },
   {
-    "objectID": "Day2.html#outline",
-    "href": "Day2.html#outline",
-    "title": "Day 2: the WAMBS",
+    "objectID": "WAMBS.html#info",
+    "href": "WAMBS.html#info",
+    "title": "WAMBS template",
     "section": "",
-    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
     "crumbs": [
-      "Day2"
+      "WAMBS template"
     ]
   },
   {
-    "objectID": "Day2.html#materials",
-    "href": "Day2.html#materials",
-    "title": "Day 2: the WAMBS",
-    "section": "Materials",
-    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
-    "crumbs": [
-      "Day2"
-    ]
-  },
-  {
-    "objectID": "Day2.html#references-and-resources",
-    "href": "Day2.html#references-and-resources",
-    "title": "Day 2: the WAMBS",
+    "objectID": "WAMBS.html#references-and-resources",
+    "href": "WAMBS.html#references-and-resources",
+    "title": "WAMBS template",
     "section": "References and resources",
-    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.",
     "crumbs": [
-      "Day2"
+      "WAMBS template"
+    ]
+  },
+  {
+    "objectID": "Day3.html",
+    "href": "Day3.html",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#outline",
+    "href": "Day3.html#outline",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#references-and-resources",
+    "href": "Day3.html#references-and-resources",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "References and resources",
+    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day1.html",
+    "href": "Day1.html",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "",
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#outline",
+    "href": "Day1.html#outline",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "",
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#materials",
+    "href": "Day1.html#materials",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#references-and-resources",
+    "href": "Day1.html#references-and-resources",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "References and resources",
+    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (9-11 am)\n\n\n\nWednesday 11th of June (9-11 am)\n\n\n\nFriday 13th of June (9-11 am)\n\n\n\nMonday 16th of June (9-11 am)\n\n\n\n\nThis site bundles all the material used for the course. Or you can download all the materials on the github page .",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -150,113 +250,153 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "objectID": "Day2.html",
+    "href": "Day2.html",
+    "title": "Day 2: the WAMBS",
     "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
     "crumbs": [
-      "Home"
+      "Day2"
     ]
   },
   {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "objectID": "Day2.html#outline",
+    "href": "Day2.html#outline",
+    "title": "Day 2: the WAMBS",
     "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
     "crumbs": [
-      "Home"
+      "Day2"
     ]
   },
   {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (9-11 am)\n\n\n\nWednesday 11th of June (9-11 am)\n\n\n\nFriday 13th of June (9-11 am)\n\n\n\nMonday 16th of June (9-11 am)\n\n\n\n\nThis site bundles all the material used for the course. Or you can download all the materials on the github page .",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
-    "section": "Contact",
-    "text": "Contact\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "Day1.html",
-    "href": "Day1.html",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day1.html#outline",
-    "href": "Day1.html#outline",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day1.html#materials",
-    "href": "Day1.html#materials",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "objectID": "Day2.html#materials",
+    "href": "Day2.html#materials",
+    "title": "Day 2: the WAMBS",
     "section": "Materials",
-    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
     "crumbs": [
-      "Day1"
+      "Day2"
     ]
   },
   {
-    "objectID": "Day1.html#references-and-resources",
-    "href": "Day1.html#references-and-resources",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "objectID": "Day2.html#references-and-resources",
+    "href": "Day2.html#references-and-resources",
+    "title": "Day 2: the WAMBS",
     "section": "References and resources",
-    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
     "crumbs": [
-      "Day1"
+      "Day2"
     ]
   },
   {
-    "objectID": "Day3.html",
-    "href": "Day3.html",
-    "title": "Day 3: Reporting and visualizing",
+    "objectID": "Day4.html",
+    "href": "Day4.html",
+    "title": "Day 4",
     "section": "",
-    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
     "crumbs": [
-      "Day3"
+      "Day4"
     ]
   },
   {
-    "objectID": "Day3.html#outline",
-    "href": "Day3.html#outline",
-    "title": "Day 3: Reporting and visualizing",
+    "objectID": "Day4.html#outline",
+    "href": "Day4.html#outline",
+    "title": "Day 4",
     "section": "",
-    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
     "crumbs": [
-      "Day3"
+      "Day4"
     ]
   },
   {
-    "objectID": "Day3.html#references-and-resources",
-    "href": "Day3.html#references-and-resources",
-    "title": "Day 3: Reporting and visualizing",
+    "objectID": "Day4.html#integrated-exercise",
+    "href": "Day4.html#integrated-exercise",
+    "title": "Day 4",
+    "section": "Integrated exercise",
+    "text": "Integrated exercise\nOn the following page you can find an html file with the tasks for this exercise: click here\nThe dataset for this exercise can be downloaded here: Subtitles.RData\nIf you are stuck while making this exercise, you can consult an example response here",
+    "crumbs": [
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Day4.html#references-and-resources",
+    "href": "Day4.html#references-and-resources",
+    "title": "Day 4",
     "section": "References and resources",
-    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
+    "text": "References and resources\nThe data for the exercise is a simulated dataset based on the following study:\nFrumuselu, Anca Daniela, Sven De Maeyer, Vincent Donche, and María del Mar Gutiérrez Colon Plana. 2015. “Television Series Inside the EFL Classroom: Bridging the Gap Between Teaching and Learning Informal Language Through Subtitles.” Linguistics and Education 32 (December): 107–17. https://doi.org/10.1016/j.linged.2015.10.001.",
     "crumbs": [
-      "Day3"
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Links.html",
+    "href": "Links.html",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#reading-tips",
+    "href": "Links.html#reading-tips",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-free-online-books",
+    "href": "Links.html#some-free-online-books",
+    "title": "Links",
+    "section": "Some free online books ",
+    "text": "Some free online books \n\nJohn Kruschke’s book Doing Bayesian Data Analyses: a tutorial with R, Jags, and Stan :\n\nhttps://nyu-cdsc.github.io/learningr/assets/kruschke_bayesian_in_R.pdf\n\nBayes Rules!:\n\nhttps://www.bayesrulesbook.com/\n\nOr this book:\n\n https://vasishth.github.io/bayescogsci/book/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#the-podcast",
+    "href": "Links.html#the-podcast",
+    "title": "Links",
+    "section": "THE Podcast ",
+    "text": "THE Podcast \nIf you like running - like I do - this could be a great companion on your run! In this podcast different guests from different backgrounds discuss the power and reasoning behind Bayesian analyses and how Bayesian statistics are used in their field from Astronomy, over Psychology to Sports Analyses (and many more).\nhttps://www.learnbayesstats.com/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#online-learning-material",
+    "href": "Links.html#online-learning-material",
+    "title": "Links",
+    "section": "Online learning material",
+    "text": "Online learning material\nThe research group of Rens van de Schoot (Utrecht University) publishes a lot on Bayesian statistics. They also developed a summer school. Their materials are also openly available at (you will notice how their way of sharing materials has inspired me :-))\nhttps://utrechtuniversity.github.io/BayesianEstimation/#quick-overview",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-example-papers",
+    "href": "Links.html#some-example-papers",
+    "title": "Links",
+    "section": "Some example papers",
+    "text": "Some example papers\nHere are some references to articles reporting on Bayesian analyses.\nGijsen, M., Catrysse, L., De Maeyer, S., & Gijbels, D. (2024). Mapping cognitive processes in video-based learning by combining trace and think-aloud data. Learning and Instruction, 90, 101851. https://doi.org/10.1016/j.learninstruc.2023.101851 \nRoeser, J., De Maeyer, S., Leijten, M., & Van Waes, L. (2021). Modelling typing disfluencies as finite mixture process. Reading and Writing.  https://doi.org/10.1007/s11145-021-10203-z",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#article-on-bayesian-evidence-interval",
+    "href": "Links.html#article-on-bayesian-evidence-interval",
+    "title": "Links",
+    "section": "Article on Bayesian Evidence Interval",
+    "text": "Article on Bayesian Evidence Interval\nDuring the course I mentioned a paper that criticises the ROPE + HDI rule and proposes an alternative for making decisions on hypotheses in the Bayesian realm. This is the reference:\nKelter, R. (2022), The evidence interval and the Bayesian evidence value: On a unified theory for Bayesian hypothesis testing and interval estimation. Br J Math Stat Psychol, 75: 550-592.\n https://doi.org/10.1111/bmsp.12267",
+    "crumbs": [
+      "Links"
     ]
   }
 ]

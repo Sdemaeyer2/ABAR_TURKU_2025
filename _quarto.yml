@@ -6,6 +6,9 @@ project:
     - Day1.qmd
     - Day2.qmd
     - Day3.qmd
+    - Day4.qmd
+    - WAMBS.qmd
+    - Links.qmd
     - about.qmd
 
 profile:
@@ -44,7 +47,12 @@ website:
         text: Day2
       - href: Day3.qmd
         text: Day3
-
+      - href: Day4.qmd
+        text: Day4
+      - href: WAMBS.qmd
+        text: WAMBS template
+      - href: Links.qmd
+        text: Links
       - href: about.qmd
         text: About me
 
