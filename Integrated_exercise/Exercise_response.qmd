@@ -2,12 +2,7 @@
 title: "Integrated excercise"
 format: 
   html:
-    toc: true
-    toc-depth: 3
-    toc-location: left
     self-contained: true
-    theme: united
-    fontsize: 1em
     code-fold: true
 bibliography: references.bib
 ---
@@ -18,6 +13,12 @@ bibliography: references.bib
 #| error: false
 #| echo: false
 library(here)
+
+```
+
+```{r setup, include=FALSE}
+.libPaths("/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library")
+library(rstan)
 ```
 
 ![](work_in_progress.png){fig-align="center" width="25%"}
@@ -43,7 +44,7 @@ At 3 occasions students got a Fluency test:
 The dependent variable is a measure based on the number of words used in a scripted spontaneous interview with a test taker. The data is structured as follows:
 
 ```{r}
-load(file = here("ABAR_Turku_2025","Integrated_exercise","Subtitles.RData"))
+load(file = here("Integrated_exercise","Subtitles.RData"))
 head(Subtitles, 9)
 ```
 
@@ -79,7 +80,7 @@ Subtitles %>%
 ------------------------------------------------------------------------
 
 ```{r, out.height = "40%", out.width="40%", echo = FALSE}
-knitr::include_graphics("friends3.jpeg")
+knitr::include_graphics(here("Integrated_exercise","friends3.jpeg"))
 ```
 
 ------------------------------------------------------------------------
@@ -238,7 +239,7 @@ Subtitles <- Subtitles %>%
     )
   )
 
-loo_models <- readRDS(file = "loo_models.RDS")
+loo_models <- readRDS(file = here("Integrated_exercise","loo_models.RDS"))
 
 print(loo_models, simplify = F)
 ```
@@ -459,7 +460,7 @@ Model_chains %>%
        col   = "Chains")
 ```
 
-Looking at the trace-plots, we can conclude that all chains mixed very well. This is already a first indication of succesful convergence.
+Looking at the trace-plots, we can conclude that all chains mixed very well. This is already a first indication of successful convergence.
 
 Next, we can check the R-hat statistic for each of the parameters. With the following plot we get a visual overview of all the R-hat statistics (notice the large number of parameters, because we also have random effects in our model):
 
@@ -469,12 +470,28 @@ Next, we can check the R-hat statistic for each of the parameters. With the foll
 #| error: false
 #| cache: false
 
+library(brms)
+library(posterior)
 library(bayesplot)
 
-mcmc_rhat(
-  rhat(M3b), 
-  size = 1) +
-  yaxis_text(hjust = 1) # to print parameter names
+# Extract posterior draws as array (robust method)
+draws_array <- as_draws_array(M3b)
+
+# Calculate Rhat directly from array
+rhat_vals <- rhat(draws_array)
+
+# Convert to numeric named vector
+rhat_numeric <- as.numeric(rhat_vals)
+names(rhat_numeric) <- names(rhat_vals)
+
+# Remove potential NA values explicitly
+rhat_numeric <- rhat_numeric[!is.na(rhat_numeric)]
+
+# Finally, plot with bayesplot
+mcmc_rhat(rhat_numeric, size = 2) +
+  yaxis_text(hjust = 1)
+
+
 ```
 
 None of the parameters shows a high R-hat statistic. They all are below the threshold of 1.05, indicating that all parameters converged well.

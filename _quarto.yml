@@ -10,6 +10,7 @@ project:
     - WAMBS.qmd
     - Links.qmd
     - about.qmd
+    - Presentations/Part1/Slides_Part1.qmd
 
 profile:
   default: en

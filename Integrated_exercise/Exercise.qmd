@@ -2,11 +2,7 @@
 title: "Integrated excercise"
 format: 
   html:
-    toc: true
-    toc-depth: 3
-    toc-location: left
     self-contained: true
-    theme: united
     fontsize: 1em
     code-fold: true
 bibliography: references.bib

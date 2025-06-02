@@ -56,13 +56,15 @@ Part 2: Checking the model with the WAMBS and how to do it in `R`
 
 Part 3: Reporting and interpreting Bayesian models
 
-Part 4: Analysing your own data or integrated excercise
+Part 4: Analysing your own data or integrated exercise
+
+Throughout the different presentations we will also increase model complexity
 
 ## Practical stuff
 
 All material is on the on-line dashboard:
 
-<https://abar-geneva-2024.netlify.app/>
+<https://abar-turku-2025.netlify.app/>
 
 You can find:
 
@@ -86,9 +88,9 @@ Therefore, we have [uncertainty]{style="color: red"}
 
 ## Why statistical inference? an example
 
-> What is the effect of average number of kilometres ran per week on the marathon time?
+> What is the effect of average number of kilometers ran per week on the marathon time?
 
-We can estimate the effect by using a regression model based on a sample:
+We can estimate the effect by using a regression model based on sample data:
 
 $$\text{MarathonTime}_i = \beta_0 + \beta_1 * \text{n_km}_i + \epsilon_i$$
 
@@ -141,10 +143,10 @@ Sample: for each km more a week approx half a minute faster
 
 Population:
 
--   p-value = prob to observe a \|0.509\| estimate if effect is zero in the population is lower than 0.05
--   CI = 95% chance that the true population slope is a value between `r lower` and `r higher`
+-   p-value = prob to observe a \|0.509\| estimate in our sample if effect is zero in the population is lower than 0.05
+-   CI = in 95% of possible samples the calculation of a CI would result in an interval containing the true population value
 
-==\> So: -0.6 is as equally probable as -0.4 ...
+==\> \[`r lower` ; `r higher`\] so: -0.6 is as equally probable as -0.4 ...
 
 ## Bayesian statistical inference
 
@@ -163,13 +165,13 @@ mcmc_areas(
 
 ## Frequentist compared to Bayesian inference
 
-<br> <br> Let's explore a tutorial App of J. Krushke (2019) <br> <br> <https://iupbsapps.shinyapps.io/KruschkeFreqAndBayesApp/>
+<br> <br> You can explore a tutorial App of J. Krushke (2019) <br> <br> <https://iupbsapps.shinyapps.io/KruschkeFreqAndBayesApp/>
 
 <br> <br> He has also written a nice tutorial, linked to this App: <br> <br> <https://jkkweb.sitehost.iu.edu/KruschkeFreqAndBayesAppTutorial.html>
 
 ## Advantages & Disadvantages of Bayesian analyses
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Advantages:
 
@@ -186,7 +188,7 @@ Disadvantage:
 -   Slow speed of model estimation
 -   Some reviewers don't understand you (<i>"give me the p-value"</i>)
 :::
-:::
+:::::
 
 ::: aside
 Slight adaptation of a slide from Paul Bürkner's presentation available on YouTube: <https://www.youtube.com/watch?v=FRs1iribZME>
@@ -196,7 +198,7 @@ Slight adaptation of a slide from Paul Bürkner's presentation available on YouT
 
 ## Bayesian Theorem
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r, out.height = "50%", out.width="50%", echo = FALSE}
 knitr::include_graphics("prior_data_posterior.png")
@@ -212,7 +214,7 @@ $$ with
 -   $P(\theta)$ : our [prior]{style="color: #447099"} belief about values for the model parameters
 -   $P(\theta|data)$: the [posterior]{style="color: #447099"} probability for model parameter values
 :::
-:::
+:::::
 
 ::: aside
 meme from <https://twitter.com/ChelseaParlett/status/1421291716229746689?s=20>
@@ -232,7 +234,7 @@ So: for a certain average ($\mu$) and standard deviation ($\sigma$) we can calcu
 
 Expression of our [prior knowledge (belief)]{style="background-color: yellow; color: red"} on the parameter values
 
-> Example: a model on "time needed to run a marathon" could be a normal distribution: $y_i \backsim N(\mu, \sigma)$
+> Example: a model on "time needed to run a marathon" could be a normal distribution $y_i \backsim N(\mu, \sigma)$
 
 e.g., How probable is an average marathon time of 120 minutes ($P(\mu=120)$) and how probable is a standard deviation of 40 minutes ($P(\sigma=40)$)?
 
@@ -261,7 +263,7 @@ data_frame(X, Prob) %>%
 
 ## Types of priors
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 [Uninformative/Weakly informative]{style="color: #447099"}
 
@@ -279,7 +281,7 @@ When including significant information is crucial
 -   theoretical considerations
 -   elicitation
 :::
-:::
+:::::
 
 ## Type of priors (visually)
 
@@ -362,7 +364,7 @@ What is the [**posterior probability**]{style="color: #447099"} of [mu = 180]{st
 options(scipen = 1000000)
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: true
@@ -395,7 +397,7 @@ Prior
 
 ```
 :::
-:::
+:::::
 
 ```{r}
 #| echo: true
@@ -413,7 +415,7 @@ Product
 
 What is the [**posterior probability**]{style="color: #447099"} of [mu = 210]{style="background-color: yellow; color: red"} combined with a [sigma = 30]{style="background-color: yellow; color: red"}?
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| echo: true
@@ -446,7 +448,7 @@ Prior
 
 ```
 :::
-:::
+:::::
 
 ```{r}
 #| echo: true
@@ -615,7 +617,7 @@ stancode(Model_math_naive)
 
 Very very similar to `lm` or `lme4` and in line with typical R-style writing up of a model ...
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 `lme4`
 
@@ -649,7 +651,7 @@ Model <- brm(
 )
 ```
 :::
-:::
+:::::
 
 Notice:
 
@@ -747,15 +749,138 @@ plot(Mod_MT1)
 
 -   Open `MarathonData.RData`
 -   Estimate your first Bayesian Models
+-   Dependent variable: `MarathonTimeM`
 -   Model1: only an intercept
 -   Model2: introduce the effect of `km4week` and `sp4week` on `MarathonTimeM`
--   Change the `brms` defaults
+-   Change the `brms` defaults (4 chains of 6000 iterations)
 -   Make plots with the `plot()` function
--   What do we learn?
+-   What do we learn? (rough interpretation)
+
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+load(file = here(
+    "Presentations",
+    "MarathonData.RData")
+    )
+
+Mod_MT1 <- brm(                        
+  MarathonTimeM ~ 1, 
+  data = MarathonData,   
+  backend = "cmdstanr",
+  seed = 1975           
+)
+```
+
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT1)
+```
+
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT1)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+Mod_MT2 <- brm(                        
+  MarathonTimeM ~ 1 + km4week + sp4week, 
+  data = MarathonData,   
+  backend = "cmdstanr",
+  seed = 1975           
+)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT2)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT2)
+```
+
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+Mod_MT3 <- brm(                        
+  MarathonTimeM ~ 1 + km4week + sp4week, 
+  data = MarathonData,
+  chains = 4,
+  iter = 4000,
+  cores = 4,
+  backend = "cmdstanr",
+  seed = 1975           
+)
+```
+
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT3)
+```
 
 ## About convergence
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r, out.height = "99%", out.width="99%", echo = FALSE}
 knitr::include_graphics("Vethari_paper.jpg")
@@ -769,7 +894,7 @@ knitr::include_graphics("Vethari_paper.jpg")
 
 -   Effective Sample Size (ESS) \> 400 to rely on $\widehat R$
 :::
-:::
+:::::
 
 ## But is it a good model?
 
