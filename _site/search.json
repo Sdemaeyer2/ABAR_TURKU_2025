@@ -336,6 +336,13 @@
     "text": "Results Exercise\nModel3: change the brms defaults\n\nsummary(Mod_MT3)\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: MarathonTimeM ~ 1 + km4week + sp4week \n   Data: MarathonData (Number of observations: 87) \n  Draws: 4 chains, each with iter = 4000; warmup = 2000; thin = 1;\n         total post-warmup draws = 8000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept   199.15      1.51   196.21   202.14 1.00     8054     5568\nkm4week      -0.42      0.06    -0.53    -0.31 1.00     8127     5617\nsp4week      -9.98      1.29   -12.50    -7.48 1.00     8080     6304\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma    13.92      1.07    12.02    16.22 1.00     7672     5845\n\nDraws were sampled using sample(hmc). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
   },
   {
+    "objectID": "Presentations/Part1/Slides_Part1.html#results-exercise-8",
+    "href": "Presentations/Part1/Slides_Part1.html#results-exercise-8",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel3: change the brms defaults\n\nplot(Mod_MT3)"
+  },
+  {
     "objectID": "Presentations/Part1/Slides_Part1.html#about-convergence",
     "href": "Presentations/Part1/Slides_Part1.html#about-convergence",
     "title": "Applied Bayesian Analyses in R",

@@ -878,6 +878,18 @@ Mod_MT3 <- brm(
 summary(Mod_MT3)
 ```
 
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT3)
+```
+
 ## About convergence
 
 ::::: columns
