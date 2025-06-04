@@ -94,7 +94,7 @@ Apply the different steps of the WAMBS check-list template for the final model.
 
 ## Subtask 2.1: what about the priors?
 
-What are the default `brms` priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach the critically as well.
+What are the default `brms` priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach them critically as well.
 
 ## Subtask 2.2: did the model converge properly?
 
@@ -110,7 +110,7 @@ Perform posterior predictive checks based on the model.
 
 ## Subtask 2.5: what about prior sensitivity of the results?
 
-Finally, we have to check if the results of our model are not to dependent on the priors we specified in the model.
+Finally, we have to check if the results of our model are not too dependent on the priors we specified in the model.
 
 # 3. Task 3
 

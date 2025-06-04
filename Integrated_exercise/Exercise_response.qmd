@@ -262,7 +262,7 @@ Apply the different steps of the WAMBS check-list template for the final model.
 
 ## Subtask 2.1: what about the priors?
 
-What are the default `brms` priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach the critically as well.
+What are the default `brms` priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach them critically as well.
 
 ------------------------------------------------------------------------
 
@@ -301,7 +301,7 @@ For all the beta's (fixed effects) `brms` uses a flat prior. Actually, that is s
 
 As we have no prior idea about the directions of the effects of condition nor of the effect of time, we could use a prior distribution centred around 0 (most probability assigned to no effect). 
 
-Next, we have to think about setting the width of the prior. For instance, if we use a normal distribution to express our prior belief, we have to think about the sd for the normal distribution that captures our prior belief. In our case, the sd has to be high enough to assign some probability to even very strong positive and negative effects. Here, it is important that we know our data well. I mean, we need to know the scale of our dependent variable. This variable has an sd of `r sd(Subtitles$fluency, na.rm=T)`. So, now we can use Effect Sizes as a reference frame. Remember, an effect size of 0.8 (or higher) indicates a stron effect (Cohen's d). So, on our scale of the `fluency` variable an effect of 5.7 (= 7.1 * 0.8) indicates a strong effect. Let's use the value 5.7 as our sd for priors for the effects of our dummy variables. Visually the prior would look like this:
+Next, we have to think about setting the width of the prior. For instance, if we use a normal distribution to express our prior belief, we have to think about the sd for the normal distribution that captures our prior belief. In our case, the sd has to be high enough to assign some probability to even very strong positive and negative effects. Here, it is important that we know our data well. I mean, we need to know the scale of our dependent variable. This variable has an sd of `r sd(Subtitles$fluency, na.rm=T)`. So, now we can use Effect Sizes as a reference frame. Remember, an effect size of 0.8 (or higher) indicates a strong effect (Cohen's d). So, on our scale of the `fluency` variable an effect of 5.7 (= 7.1 * 0.8) indicates a strong effect. Let's use the value 5.7 as our sd for priors for the effects of our dummy variables. Visually the prior would look like this:
 
 ```{r}
 # Setting a plotting theme
@@ -471,24 +471,13 @@ Next, we can check the R-hat statistic for each of the parameters. With the foll
 #| cache: false
 
 library(brms)
-library(posterior)
 library(bayesplot)
 
 # Extract posterior draws as array (robust method)
-draws_array <- as_draws_array(M3b)
+Rhats <- brms::rhat(M3b)
 
-# Calculate Rhat directly from array
-rhat_vals <- rhat(draws_array)
-
-# Convert to numeric named vector
-rhat_numeric <- as.numeric(rhat_vals)
-names(rhat_numeric) <- names(rhat_vals)
-
-# Remove potential NA values explicitly
-rhat_numeric <- rhat_numeric[!is.na(rhat_numeric)]
-
-# Finally, plot with bayesplot
-mcmc_rhat(rhat_numeric, size = 2) +
+# Plot with bayesplot
+mcmc_rhat(Rhats, size = 2) +
   yaxis_text(hjust = 1)
 
 

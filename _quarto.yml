@@ -11,6 +11,8 @@ project:
     - Links.qmd
     - about.qmd
     - Presentations/Part1/Slides_Part1.qmd
+    - Integrated_exercise/Exercise.qmd
+    - Integrated_exercise/Exercise_response.qmd
 
 profile:
   default: en
