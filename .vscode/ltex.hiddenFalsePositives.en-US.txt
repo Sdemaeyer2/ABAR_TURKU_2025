@@ -1,0 +1,1 @@
+{"rule":"OF_ANY_OF","sentence":"^\\QSo, we can conclude that the amount of autocorrelation is not problematic for the estimation of any of the parameters.\\E$"}

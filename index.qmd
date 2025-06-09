@@ -14,10 +14,10 @@ Participants will be introduced to a workflow for Bayesian analyses in the open-
 
 | When?  | Where    |
 |:--------|:-------|
-| Monday 9th of June (9-11 am) | |
-| Wednesday 11th of June (9-11 am) | |
-| Friday 13th of June (9-11 am) | |
-| Monday 16th of June (9-11 am) | |
+| Monday 9th of June (10-12 am) | Pub209 |
+| Wednesday 11th of June (10-12 am) | Pub209 |
+| Friday 13th of June (10-12 am) | Pub209 |
+| Monday 16th of June (9-11 am) | Pub209 |
 
 
 This site bundles all the material used for the course. Or you can download all the materials on <a href="https://github.com/Sdemaeyer2/ABAR_TURKU_2025" target="_blank">the github page </a>. 

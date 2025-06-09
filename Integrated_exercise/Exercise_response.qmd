@@ -286,7 +286,7 @@ M3_priors <- brm(
 pp_check(M3_priors)
 ```
 
-As you might notice, you will get an error message saying that sampling from the priors is not possible. This is due to the fact that `brms` by default uses flat priors. So, this generates this error message.
+As you might notice, you will get an error message saying that sampling from the priors is not possible. This is due to the fact that `brms` by default uses flat priors which generates this error message.
 
 To get the priors used by `brms` we use the `get_prior()` command.
 
@@ -297,11 +297,11 @@ get_prior(
 )
 ```
 
-For all the beta's (fixed effects) `brms` uses a flat prior. Actually, that is something that is better avoided. More appropriate would be to come up with our own priors. Let's think about this. All the explanatory variables are dummy variables. So, they quantify differences between groups of observations (based on time or condition). 
+As can be seen above, for all the beta's (fixed effects) `brms` uses a flat prior. Actually, that is something that is better avoided. More appropriate would be to come up with our own priors. Let's think about this. All the explanatory variables are dummy variables. So, they quantify differences between groups of observations (based on time or condition). 
 
 As we have no prior idea about the directions of the effects of condition nor of the effect of time, we could use a prior distribution centred around 0 (most probability assigned to no effect). 
 
-Next, we have to think about setting the width of the prior. For instance, if we use a normal distribution to express our prior belief, we have to think about the sd for the normal distribution that captures our prior belief. In our case, the sd has to be high enough to assign some probability to even very strong positive and negative effects. Here, it is important that we know our data well. I mean, we need to know the scale of our dependent variable. This variable has an sd of `r sd(Subtitles$fluency, na.rm=T)`. So, now we can use Effect Sizes as a reference frame. Remember, an effect size of 0.8 (or higher) indicates a strong effect (Cohen's d). So, on our scale of the `fluency` variable an effect of 5.7 (= 7.1 * 0.8) indicates a strong effect. Let's use the value 5.7 as our sd for priors for the effects of our dummy variables. Visually the prior would look like this:
+Next, we have to think about setting the width of the prior. For instance, if we use a normal distribution to express our prior belief, we have to think about the sd for the normal distribution that captures our prior belief. In our case, the sd has to be high enough to assign some probability to very strong positive effects as well as to very strong negative effects. Here, it is important that we know our data well. I mean, we need to know the scale of our dependent variable (`fluency`). This variable has a standard deviation of `r round(sd(Subtitles$fluency, na.rm=T), 1)`. Now we can use *Effect Sizes* as a frame of reference to determine what a large positive and negative effect implies on the scale of the `fluency` variable. Remember, an effect size of 0.8 (or higher) indicates a strong effect (this is based on the *Cohen's d* rules of thumb). So, on our scale of the `fluency` variable an effect of 5.7 (= 7.1 * 0.8) indicates a strong effect. If we use the value 5.7 as our sd for priors for the effects of our dummy variables, this would imply that we think that the 95% most probable parameter values for the effect of the dummy variables would be situated between -11.4 (= -2 * 5.7) and 11.4 (= 2 * 5.7). Visually the prior would look like this:
 
 ```{r}
 # Setting a plotting theme
@@ -328,9 +328,9 @@ Prior_betas <- ggplot( ) +
 Prior_betas
 ```
 
-Notice that even effects of -10 and 10 (almast effect sizes of -2 and 2) still get a decent amount of probability in our prior density function. 
+Notice that even effects of -11 and 11 (almost effect sizes of -2 and 2) still get a decent amount of probability in our prior density function. 
 
-Let's set these priors and try to apply a pp_check(). Notice that I set the priors for all slopes (`class = "b"`) at once.
+Let's set these priors and try to apply a `pp_check()`. Notice that I set the priors for all slopes (`class = "b"`) at once.
 
 ```{r}
 #| message: false
@@ -373,7 +373,7 @@ pp_check(M3_priors)
 ```
 
 
-The simulated data goes all the way! But it doesn't generate extremely high or low observations and from this check we also learn that we have set quiet broad priors as they result in big differences between simulated datasets based on our model now.
+The simulated data goes all the way (light blue lines)! But it doesn't generate extremely high or low observations and from this check we also learn that we have set quiet broad priors as they result in big differences between distributions of `fluency` based on the simulated datasets coming from our model with these priors.
 
 Time to apply these priors (that we somehow understand now) to estimate the real model.
 
@@ -464,6 +464,10 @@ Looking at the trace-plots, we can conclude that all chains mixed very well. Thi
 
 Next, we can check the R-hat statistic for each of the parameters. With the following plot we get a visual overview of all the R-hat statistics (notice the large number of parameters, because we also have random effects in our model):
 
+::: {.callout-note}
+In the code below you can see that I first create a vector called `Rhats` to use in the `mcmc_rhat()` function. To create the vector I call the `brms::rhat()` function. By writing explicitly `brms::` before the `rhat()` I make sure that the `rhat()` function from the package `brms` is used. I do this to avoid the use of another `rhat()` function that might be loaded by activating other packages and that results in incompatible results with the `mcmc_rhat()` function.
+:::
+
 ```{r}
 #| echo: true
 #| message: false
@@ -485,7 +489,7 @@ mcmc_rhat(Rhats, size = 2) +
 
 None of the parameters shows a high R-hat statistic. They all are below the threshold of 1.05, indicating that all parameters converged well.
 
-Time to get insight in the amount of autocorrelation. A first check is plotting the ratio of the number of Effective Sample Sizes to the Total Sampel Sizes for all the parameters. Remember that this ratio should be above 0.1 to be sure that the amount of autocorrelation is acceptable. Following code gives a visual overview of these ratios.
+Time to get insight in the amount of autocorrelation. A first check is plotting the ratio of the number of *Effective Sample Sizes* to the *Total Sampel Sizes* for all the parameters. Remember that this ratio should be above 0.1 to be sure that the amount of autocorrelation is acceptable. Following code gives a visual overview of these ratios.
 
 ```{r}
 #| echo: true
@@ -499,7 +503,7 @@ mcmc_neff(
   yaxis_text(hjust = 1)
 ```
 
-From the plot we learn that for all the parameters the ratio is above 0.1. So, we can conclude that the amount of autocorrelation is not problematic for any of the parameters.
+From the plot we learn that for all the parameters the ratio is above 0.1. So, we can conclude that the amount of autocorrelation is not problematic for the estimation of any of the parameters.
 
 ---
 
@@ -511,7 +515,7 @@ Check if the posterior distribution histograms of the different parameters are i
 
 <i> Possible solution </i>
 
-To evaluate this, we create histograms based on the draws for our parameter models. We will apply this first for all main effects.
+To evaluate this, we create histograms based on the draws for our parameter values based on our model. We will apply this first for all main fixed effects.
 
 ```{r}
 #| echo: true
@@ -631,7 +635,9 @@ pp_check(M3b)
 
 ## Subtask 2.5: what about prior sensitivity of the results?
 
-Finally, we have to check if the results of our model are not to dependent on the priors we specified in the model.
+Finally, we have to check if the results of our model are not too dependent on the priors we specified in the model.
+
+**TO DO**
 
 # 3. Task 3
 
@@ -642,6 +648,8 @@ One of the possible visualizations could be a rather complex one. Remember, ther
 And what do we learn about the progress between Occ1 and Occ2 in each of the groups? And what about the progress between Occ2 and Occ3?
 
 ---
+
+
 
 <i> Possible solution </i>
 
