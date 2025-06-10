@@ -49,36 +49,187 @@ theme_set(theme_linedraw() +
 ## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `MarathonData.RData`
--   Estimate two Bayesian Models
+-   Estimate your first Bayesian Models
+-   Dependent variable: `MarathonTimeM`
 -   Model1: only an intercept
--   Model2: introduce the effect of `km4week` and `sp4week`on `MarathonTimeM`
+-   Model2: introduce the effect of `km4week` and `sp4week` on `MarathonTimeM`
+-   Change the `brms` defaults (4 chains of 6000 iterations)
 -   Make plots with the `plot()` function
--   What do we learn?
+-   What do we learn? (rough interpretation)
 
 ::: aside
 [Note: I centred both]{style="color: white"} `km4week`[and]{style="color: white"} `sp4week` [around their mean!]{style="color: white"}
 :::
 
-##  {background-color="#447099" transition="slide-in"}
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
 
 ```{r}
+#| eval: true
+#| message: false
+#| warning: false
 #| echo: true
-#| eval: false
-MarathonTimes_Mod1 <- brm(                        
-  MarathonTimeM ~ 1, # We only model an intercept 
-  data = MarathonData,                         
-  backend = "cmdstanr",  
-  cores = 4,
-  seed = 1975                          
-)
 
-MarathonTimes_Mod2 <- brm(                        
-  MarathonTimeM ~ km4week + sp4week, 
-  data = MarathonData,                         
-  backend = "cmdstanr",  
-  cores = 4,
-  seed = 1975                          
+load(file = here(
+    "Presentations",
+    "MarathonData.RData")
+    )
+
+Mod_MT1 <- brm(                        
+  MarathonTimeM ~ 1, 
+  data = MarathonData,   
+  backend = "cmdstanr",
+  seed = 1975           
 )
+```
+
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT1)
+```
+
+## Results Exercise
+
+*Model1: only an intercept (brms defaults)*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT1)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+Mod_MT2 <- brm(                        
+  MarathonTimeM ~ 1 + km4week + sp4week, 
+  data = MarathonData,   
+  backend = "cmdstanr",
+  seed = 1975           
+)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT2)
+```
+
+## Results Exercise
+
+*Model2: add the effect of* `km4week` *and* `sp4week`
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT2)
+```
+
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+
+Mod_MT3 <- brm(                        
+  MarathonTimeM ~ 1 + km4week + sp4week, 
+  data = MarathonData,
+  chains = 4,
+  iter = 4000,
+  cores = 4,
+  backend = "cmdstanr",
+  seed = 1975           
+)
+```
+
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+summary(Mod_MT3)
+```
+
+## Results Exercise
+
+*Model3: change the brms defaults*
+
+```{r}
+#| eval: true
+#| message: false
+#| warning: false
+#| echo: true
+plot(Mod_MT3)
+```
+
+## About convergence
+
+::::: columns
+::: {.column width="50%"}
+```{r, out.height = "99%", out.width="99%", echo = FALSE}
+knitr::include_graphics("Vethari_paper.jpg")
+```
+:::
+
+::: {.column width="50%"}
+-   $\widehat R$ \< 1.015 for each parameter estimate
+
+-   at least 4 chains are recommended
+
+-   Effective Sample Size (ESS) \> 400 to rely on $\widehat R$
+:::
+:::::
+
+## But is it a good model?
+
+<br> <br> Two complementary procedures: <br> <br>
+
+-   posterior-predictive check
+
+-   compare models with <i>[leave one out cross-validation]{style="color:#447099"}</i>
+
+## Posterior-predictive check
+
+A visual check that can be performed with `pp_check()` from `brms`
+
+```{r, fig.width = 5, fig.height = 5}
+#| echo: true
+#| output-location: slide
+
+pp_check(Mod_MT2) + theme_minimal()
 ```
 
 ## Model comparison with loo cross-validation
@@ -125,7 +276,7 @@ print(Comparison, simplify = F)
 
 by Laurent Smeets and Rens van der Schoot
 
-::: columns
+:::::: columns
 ::: {.column width="33%"}
 Before estimating the model:
 
@@ -150,7 +301,7 @@ Understanding the exact influence of the priors
 9.  Are the results stable from a sensitivity analysis?
 10. Is the Bayesian way of interpreting and reporting model results used?
 :::
-:::
+::::::
 
 ::: aside
 Tutorial source: <https://www.rensvandeschoot.com/brms-wambs/>
@@ -170,7 +321,7 @@ Tutorial source: <https://www.rensvandeschoot.com/brms-wambs/>
 
 -   You can apply/adapt the code in the template
 
--  To render the document properly with references, you also need the <a href="https://abar-geneva-2024.netlify.app/WAMBS_template/references.bib" target="blank">references.bib file </a>
+-   To render the document properly with references, you also need the <a href="https://abar-geneva-2024.netlify.app/WAMBS_template/references.bib" target="blank">references.bib file </a>
 
 ## Side-path: projects in RStudio and the `here` package
 
@@ -220,7 +371,7 @@ MarathonTimes_Mod2 <-
 
 ## Remember: priors come in many disguises
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 [Uninformative/Weakly informative]{style="color: #447099"}
 
@@ -238,7 +389,7 @@ When including significant information is crucial
 -   theoretical considerations
 -   elicitation
 :::
-:::
+:::::
 
 ## `brms` defaults
 
@@ -360,21 +511,83 @@ Prior_mu + Prior_sigma + Prior_betas +
   plot_layout(ncol = 3)
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+## Understanding priors... another example
 
--   Your data and model
--   What are the priors set by `brms`?
--   Can you come up with custom priors for certain parameters?
--   Try to build a rationale/argumentation for them
--   Visualize the custom or default priors
+Experimental study (pretest - posttest design) with 3 conditions:
 
-*DO NOT HESITATE TO ASK FOR GUIDANCE HERE*
+-   control group;
+-   experimental group 1;
+-   experimental group 2.
 
-::: callout-tip
-## Tip
+Model:
 
-Consider re-scaling your (in)dependent variables if it is hard to make sense of parameters a priori. E.g., standardizing variables enables you to think in effect sizes.
-:::
+$$\begin{aligned}
+  & Posttest_{i}  \sim N(\mu,\sigma_{e_{i}})\\
+  & \mu = \beta_0 + \beta_1*\text{Pretest}_{i} + \beta_2*\text{Exp_cond1}_{i} + \beta_3*\text{Exp_cond2}_{i}
+\end{aligned}$$
+
+Our job: coming up with priors that reflect that we expect both conditions to have a positive effect (hypothesis based on literature) and no indications that one experimental condition will outperform the other.
+
+## Understanding priors... another example
+
+-   Assuming pre- and posttest scores are standardized
+-   Assuming no increase between pre- and posttest in control condition
+
+```{r}
+# Generate the plot for the prior of the Intercept (mu)
+Prior_mu <- ggplot( ) +
+  stat_function(
+    fun = dnorm,    # We use a normal distribution
+    args = list(mean = 0, sd = .5), # 
+    xlim = c(-1,1)
+  ) +
+  scale_y_continuous(name = "density") +
+  labs(title = "Prior for the intercept",
+       subtitle = "N(0,0.5)")
+
+Prior_mu
+```
+
+## Understanding priors... another example
+
+-   Assuming a strong correlation between pre- and posttest
+
+```{r}
+# Generate the plot for the prior of beta 1
+Prior_beta1 <- ggplot( ) +
+  stat_function(
+    fun = dnorm,    # We use the dt.scaled function of metRology
+    args = list(mean = 1, sd = 0.5), # 
+    xlim = c(-1,3)
+  ) +
+  scale_y_continuous(name = "density") +
+  labs(title = "Prior for the effect of pretest score",
+       subtitle = "N(1,0.5)")
+
+Prior_beta1
+```
+
+## Understanding priors... another example
+
+-   Assuming a small effect of experimental conditions
+-   No difference between both experimental conditions
+
+```{r}
+# Generate the plot for the prior of the effects experimental conditions
+Prior_betas <- ggplot( ) +
+  stat_function(
+    fun = dnorm,    # We use the normal distribution
+    args = list(mean = 0.2, sd = .6), # 
+    xlim = c(-1,2)
+  ) +
+  scale_y_continuous(name = "density") +
+  labs(title = "Prior for the effects of experimental conditions",
+       subtitle = "N(0.2,0.6)")
+
+Prior_betas
+```
+
+Remember Cohen's d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size
 
 ## Setting custom priors in `brms`
 
@@ -511,7 +724,7 @@ pp_check(Fit_Model_priors,
 
 # Focus on convergence of the model (before interpreting the model!)
 
-## Does the trace-plot exhibit convergence?
+## Does the trace-plot exhibits convergence?
 
 <br>
 
@@ -580,7 +793,7 @@ R-hat ($\widehat{R}$) : compares the between- and within-chain estimates for mod
 
 ## R-hat statistics
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r, out.height = "95%", out.width="95%", echo = FALSE}
 knitr::include_graphics("Vethari_paper.jpg")
@@ -588,13 +801,13 @@ knitr::include_graphics("Vethari_paper.jpg")
 :::
 
 ::: {.column width="50%"}
--   $\widehat{R}$ \< 1.05 for each parameter estimate
+-   $\widehat{R}$ \< 1.015 for each parameter estimate
 
 -   at least 4 chains are recommended
 
 -   Effective Sample Size (ESS) \> 400 to rely on $\widehat{R}$
 :::
-:::
+:::::
 
 ## R-hat in `brms`
 
@@ -604,9 +817,10 @@ knitr::include_graphics("Vethari_paper.jpg")
 #| echo: true
 #| output-location: slide
 
-mcmc_rhat(rhat(MarathonTimes_Mod2), 
-          size = 3
-          )+ 
+mcmc_rhat(
+  brms::rhat(MarathonTimes_Mod2), 
+  size = 3
+  )+ 
   yaxis_text(hjust = 1)  # to print parameter names
 ```
 

@@ -17,3 +17,5 @@ ggtext
 patchwork
 ggmcmc
 priorsense
+StanHeaders
+rstan

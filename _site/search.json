@@ -35,6 +35,945 @@
     "text": "Subtask 2.5: what about prior sensitivity of the results?\nFinally, we have to check if the results of our model are not too dependent on the priors we specified in the model.\nTO DO"
   },
   {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nOpen MarathonData.RData\nEstimate your first Bayesian Models\nDependent variable: MarathonTimeM\nModel1: only an intercept\nModel2: introduce the effect of km4week and sp4week on MarathonTimeM\nChange the brms defaults (4 chains of 6000 iterations)\nMake plots with the plot() function\nWhat do we learn? (rough interpretation)\n\n\n\nNote: I centred both km4weekand sp4week around their mean!"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel1: only an intercept (brms defaults)\n\nload(file = here(\n    \"Presentations\",\n    \"MarathonData.RData\")\n    )\n\nMod_MT1 &lt;- brm(                        \n  MarathonTimeM ~ 1, \n  data = MarathonData,   \n  backend = \"cmdstanr\",\n  seed = 1975           \n)\n\nRunning MCMC with 4 sequential chains...\n\nChain 1 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 1 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 1 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 1 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 1 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 1 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 1 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 1 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 1 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 1 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 1 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 1 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 1 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 1 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 1 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 1 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 1 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 1 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 1 finished in 0.0 seconds.\nChain 2 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 2 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 2 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 2 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 2 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 2 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 2 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 2 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 2 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 2 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 2 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 2 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 2 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 2 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 2 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 2 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 2 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 2 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 2 finished in 0.0 seconds.\nChain 3 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 3 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 3 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 3 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 3 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 3 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 3 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 3 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 3 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 3 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 3 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 3 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 3 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 3 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 3 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 3 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 3 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 3 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 3 finished in 0.0 seconds.\nChain 4 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 4 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 4 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 4 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 4 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 4 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 4 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 4 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 4 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 4 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 4 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 4 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 4 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 4 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 4 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 4 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 4 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 4 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 4 finished in 0.0 seconds.\n\nAll 4 chains finished successfully.\nMean chain execution time: 0.0 seconds.\nTotal execution time: 0.5 seconds."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-1",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel1: only an intercept (brms defaults)\n\nsummary(Mod_MT1)\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: MarathonTimeM ~ 1 \n   Data: MarathonData (Number of observations: 87) \n  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;\n         total post-warmup draws = 4000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept   199.12      2.42   194.38   203.76 1.00     2903     2125\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma    22.84      1.73    19.72    26.39 1.00     3314     2946\n\nDraws were sampled using sample(hmc). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-2",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel1: only an intercept (brms defaults)\n\nplot(Mod_MT1)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-3",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-3",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel2: add the effect of km4week and sp4week\n\nMod_MT2 &lt;- brm(                        \n  MarathonTimeM ~ 1 + km4week + sp4week, \n  data = MarathonData,   \n  backend = \"cmdstanr\",\n  seed = 1975           \n)\n\nRunning MCMC with 4 sequential chains...\n\nChain 1 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 1 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 1 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 1 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 1 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 1 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 1 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 1 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 1 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 1 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 1 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 1 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 1 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 1 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 1 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 1 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 1 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 1 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 1 finished in 0.0 seconds.\nChain 2 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 2 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 2 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 2 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 2 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 2 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 2 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 2 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 2 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 2 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 2 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 2 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 2 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 2 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 2 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 2 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 2 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 2 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 2 finished in 0.0 seconds.\nChain 3 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 3 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 3 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 3 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 3 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 3 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 3 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 3 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 3 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 3 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 3 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 3 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 3 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 3 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 3 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 3 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 3 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 3 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 3 finished in 0.0 seconds.\nChain 4 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 4 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 4 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 4 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 4 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 4 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 4 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 4 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 4 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 4 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 4 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 4 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 4 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 4 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 4 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 4 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 4 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 4 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 4 finished in 0.0 seconds.\n\nAll 4 chains finished successfully.\nMean chain execution time: 0.0 seconds.\nTotal execution time: 0.5 seconds."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-4",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-4",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel2: add the effect of km4week and sp4week\n\nsummary(Mod_MT2)\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: MarathonTimeM ~ 1 + km4week + sp4week \n   Data: MarathonData (Number of observations: 87) \n  Draws: 4 chains, each with iter = 2000; warmup = 1000; thin = 1;\n         total post-warmup draws = 4000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept   199.20      1.50   196.28   202.15 1.00     3852     2838\nkm4week      -0.42      0.06    -0.53    -0.31 1.00     4189     3157\nsp4week      -9.98      1.30   -12.46    -7.50 1.00     4402     3263\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma    13.94      1.09    11.96    16.29 1.00     3991     3236\n\nDraws were sampled using sample(hmc). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-5",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-5",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel2: add the effect of km4week and sp4week\n\nplot(Mod_MT2)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-6",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-6",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel3: change the brms defaults\n\nMod_MT3 &lt;- brm(                        \n  MarathonTimeM ~ 1 + km4week + sp4week, \n  data = MarathonData,\n  chains = 4,\n  iter = 4000,\n  cores = 4,\n  backend = \"cmdstanr\",\n  seed = 1975           \n)\n\nRunning MCMC with 4 parallel chains...\n\nChain 1 Iteration:    1 / 4000 [  0%]  (Warmup) \nChain 1 Iteration:  100 / 4000 [  2%]  (Warmup) \nChain 1 Iteration:  200 / 4000 [  5%]  (Warmup) \nChain 1 Iteration:  300 / 4000 [  7%]  (Warmup) \nChain 1 Iteration:  400 / 4000 [ 10%]  (Warmup) \nChain 1 Iteration:  500 / 4000 [ 12%]  (Warmup) \nChain 1 Iteration:  600 / 4000 [ 15%]  (Warmup) \nChain 1 Iteration:  700 / 4000 [ 17%]  (Warmup) \nChain 1 Iteration:  800 / 4000 [ 20%]  (Warmup) \nChain 1 Iteration:  900 / 4000 [ 22%]  (Warmup) \nChain 1 Iteration: 1000 / 4000 [ 25%]  (Warmup) \nChain 1 Iteration: 1100 / 4000 [ 27%]  (Warmup) \nChain 1 Iteration: 1200 / 4000 [ 30%]  (Warmup) \nChain 1 Iteration: 1300 / 4000 [ 32%]  (Warmup) \nChain 1 Iteration: 1400 / 4000 [ 35%]  (Warmup) \nChain 1 Iteration: 1500 / 4000 [ 37%]  (Warmup) \nChain 1 Iteration: 1600 / 4000 [ 40%]  (Warmup) \nChain 1 Iteration: 1700 / 4000 [ 42%]  (Warmup) \nChain 1 Iteration: 1800 / 4000 [ 45%]  (Warmup) \nChain 1 Iteration: 1900 / 4000 [ 47%]  (Warmup) \nChain 1 Iteration: 2000 / 4000 [ 50%]  (Warmup) \nChain 1 Iteration: 2001 / 4000 [ 50%]  (Sampling) \nChain 1 Iteration: 2100 / 4000 [ 52%]  (Sampling) \nChain 1 Iteration: 2200 / 4000 [ 55%]  (Sampling) \nChain 1 Iteration: 2300 / 4000 [ 57%]  (Sampling) \nChain 1 Iteration: 2400 / 4000 [ 60%]  (Sampling) \nChain 1 Iteration: 2500 / 4000 [ 62%]  (Sampling) \nChain 1 Iteration: 2600 / 4000 [ 65%]  (Sampling) \nChain 1 Iteration: 2700 / 4000 [ 67%]  (Sampling) \nChain 1 Iteration: 2800 / 4000 [ 70%]  (Sampling) \nChain 1 Iteration: 2900 / 4000 [ 72%]  (Sampling) \nChain 1 Iteration: 3000 / 4000 [ 75%]  (Sampling) \nChain 1 Iteration: 3100 / 4000 [ 77%]  (Sampling) \nChain 1 Iteration: 3200 / 4000 [ 80%]  (Sampling) \nChain 1 Iteration: 3300 / 4000 [ 82%]  (Sampling) \nChain 1 Iteration: 3400 / 4000 [ 85%]  (Sampling) \nChain 1 Iteration: 3500 / 4000 [ 87%]  (Sampling) \nChain 1 Iteration: 3600 / 4000 [ 90%]  (Sampling) \nChain 1 Iteration: 3700 / 4000 [ 92%]  (Sampling) \nChain 1 Iteration: 3800 / 4000 [ 95%]  (Sampling) \nChain 1 Iteration: 3900 / 4000 [ 97%]  (Sampling) \nChain 1 Iteration: 4000 / 4000 [100%]  (Sampling) \nChain 2 Iteration:    1 / 4000 [  0%]  (Warmup) \nChain 2 Iteration:  100 / 4000 [  2%]  (Warmup) \nChain 2 Iteration:  200 / 4000 [  5%]  (Warmup) \nChain 2 Iteration:  300 / 4000 [  7%]  (Warmup) \nChain 2 Iteration:  400 / 4000 [ 10%]  (Warmup) \nChain 2 Iteration:  500 / 4000 [ 12%]  (Warmup) \nChain 2 Iteration:  600 / 4000 [ 15%]  (Warmup) \nChain 2 Iteration:  700 / 4000 [ 17%]  (Warmup) \nChain 2 Iteration:  800 / 4000 [ 20%]  (Warmup) \nChain 2 Iteration:  900 / 4000 [ 22%]  (Warmup) \nChain 2 Iteration: 1000 / 4000 [ 25%]  (Warmup) \nChain 2 Iteration: 1100 / 4000 [ 27%]  (Warmup) \nChain 2 Iteration: 1200 / 4000 [ 30%]  (Warmup) \nChain 2 Iteration: 1300 / 4000 [ 32%]  (Warmup) \nChain 2 Iteration: 1400 / 4000 [ 35%]  (Warmup) \nChain 2 Iteration: 1500 / 4000 [ 37%]  (Warmup) \nChain 2 Iteration: 1600 / 4000 [ 40%]  (Warmup) \nChain 2 Iteration: 1700 / 4000 [ 42%]  (Warmup) \nChain 2 Iteration: 1800 / 4000 [ 45%]  (Warmup) \nChain 2 Iteration: 1900 / 4000 [ 47%]  (Warmup) \nChain 2 Iteration: 2000 / 4000 [ 50%]  (Warmup) \nChain 2 Iteration: 2001 / 4000 [ 50%]  (Sampling) \nChain 2 Iteration: 2100 / 4000 [ 52%]  (Sampling) \nChain 2 Iteration: 2200 / 4000 [ 55%]  (Sampling) \nChain 2 Iteration: 2300 / 4000 [ 57%]  (Sampling) \nChain 2 Iteration: 2400 / 4000 [ 60%]  (Sampling) \nChain 2 Iteration: 2500 / 4000 [ 62%]  (Sampling) \nChain 2 Iteration: 2600 / 4000 [ 65%]  (Sampling) \nChain 2 Iteration: 2700 / 4000 [ 67%]  (Sampling) \nChain 2 Iteration: 2800 / 4000 [ 70%]  (Sampling) \nChain 2 Iteration: 2900 / 4000 [ 72%]  (Sampling) \nChain 2 Iteration: 3000 / 4000 [ 75%]  (Sampling) \nChain 2 Iteration: 3100 / 4000 [ 77%]  (Sampling) \nChain 2 Iteration: 3200 / 4000 [ 80%]  (Sampling) \nChain 2 Iteration: 3300 / 4000 [ 82%]  (Sampling) \nChain 2 Iteration: 3400 / 4000 [ 85%]  (Sampling) \nChain 2 Iteration: 3500 / 4000 [ 87%]  (Sampling) \nChain 2 Iteration: 3600 / 4000 [ 90%]  (Sampling) \nChain 2 Iteration: 3700 / 4000 [ 92%]  (Sampling) \nChain 2 Iteration: 3800 / 4000 [ 95%]  (Sampling) \nChain 2 Iteration: 3900 / 4000 [ 97%]  (Sampling) \nChain 2 Iteration: 4000 / 4000 [100%]  (Sampling) \nChain 3 Iteration:    1 / 4000 [  0%]  (Warmup) \nChain 3 Iteration:  100 / 4000 [  2%]  (Warmup) \nChain 3 Iteration:  200 / 4000 [  5%]  (Warmup) \nChain 3 Iteration:  300 / 4000 [  7%]  (Warmup) \nChain 3 Iteration:  400 / 4000 [ 10%]  (Warmup) \nChain 3 Iteration:  500 / 4000 [ 12%]  (Warmup) \nChain 3 Iteration:  600 / 4000 [ 15%]  (Warmup) \nChain 3 Iteration:  700 / 4000 [ 17%]  (Warmup) \nChain 3 Iteration:  800 / 4000 [ 20%]  (Warmup) \nChain 3 Iteration:  900 / 4000 [ 22%]  (Warmup) \nChain 3 Iteration: 1000 / 4000 [ 25%]  (Warmup) \nChain 3 Iteration: 1100 / 4000 [ 27%]  (Warmup) \nChain 3 Iteration: 1200 / 4000 [ 30%]  (Warmup) \nChain 3 Iteration: 1300 / 4000 [ 32%]  (Warmup) \nChain 3 Iteration: 1400 / 4000 [ 35%]  (Warmup) \nChain 3 Iteration: 1500 / 4000 [ 37%]  (Warmup) \nChain 3 Iteration: 1600 / 4000 [ 40%]  (Warmup) \nChain 3 Iteration: 1700 / 4000 [ 42%]  (Warmup) \nChain 3 Iteration: 1800 / 4000 [ 45%]  (Warmup) \nChain 3 Iteration: 1900 / 4000 [ 47%]  (Warmup) \nChain 3 Iteration: 2000 / 4000 [ 50%]  (Warmup) \nChain 3 Iteration: 2001 / 4000 [ 50%]  (Sampling) \nChain 3 Iteration: 2100 / 4000 [ 52%]  (Sampling) \nChain 3 Iteration: 2200 / 4000 [ 55%]  (Sampling) \nChain 3 Iteration: 2300 / 4000 [ 57%]  (Sampling) \nChain 3 Iteration: 2400 / 4000 [ 60%]  (Sampling) \nChain 3 Iteration: 2500 / 4000 [ 62%]  (Sampling) \nChain 3 Iteration: 2600 / 4000 [ 65%]  (Sampling) \nChain 3 Iteration: 2700 / 4000 [ 67%]  (Sampling) \nChain 3 Iteration: 2800 / 4000 [ 70%]  (Sampling) \nChain 3 Iteration: 2900 / 4000 [ 72%]  (Sampling) \nChain 3 Iteration: 3000 / 4000 [ 75%]  (Sampling) \nChain 3 Iteration: 3100 / 4000 [ 77%]  (Sampling) \nChain 3 Iteration: 3200 / 4000 [ 80%]  (Sampling) \nChain 3 Iteration: 3300 / 4000 [ 82%]  (Sampling) \nChain 3 Iteration: 3400 / 4000 [ 85%]  (Sampling) \nChain 3 Iteration: 3500 / 4000 [ 87%]  (Sampling) \nChain 3 Iteration: 3600 / 4000 [ 90%]  (Sampling) \nChain 3 Iteration: 3700 / 4000 [ 92%]  (Sampling) \nChain 3 Iteration: 3800 / 4000 [ 95%]  (Sampling) \nChain 3 Iteration: 3900 / 4000 [ 97%]  (Sampling) \nChain 3 Iteration: 4000 / 4000 [100%]  (Sampling) \nChain 4 Iteration:    1 / 4000 [  0%]  (Warmup) \nChain 4 Iteration:  100 / 4000 [  2%]  (Warmup) \nChain 4 Iteration:  200 / 4000 [  5%]  (Warmup) \nChain 4 Iteration:  300 / 4000 [  7%]  (Warmup) \nChain 4 Iteration:  400 / 4000 [ 10%]  (Warmup) \nChain 4 Iteration:  500 / 4000 [ 12%]  (Warmup) \nChain 4 Iteration:  600 / 4000 [ 15%]  (Warmup) \nChain 4 Iteration:  700 / 4000 [ 17%]  (Warmup) \nChain 4 Iteration:  800 / 4000 [ 20%]  (Warmup) \nChain 4 Iteration:  900 / 4000 [ 22%]  (Warmup) \nChain 4 Iteration: 1000 / 4000 [ 25%]  (Warmup) \nChain 4 Iteration: 1100 / 4000 [ 27%]  (Warmup) \nChain 4 Iteration: 1200 / 4000 [ 30%]  (Warmup) \nChain 4 Iteration: 1300 / 4000 [ 32%]  (Warmup) \nChain 4 Iteration: 1400 / 4000 [ 35%]  (Warmup) \nChain 4 Iteration: 1500 / 4000 [ 37%]  (Warmup) \nChain 4 Iteration: 1600 / 4000 [ 40%]  (Warmup) \nChain 4 Iteration: 1700 / 4000 [ 42%]  (Warmup) \nChain 4 Iteration: 1800 / 4000 [ 45%]  (Warmup) \nChain 4 Iteration: 1900 / 4000 [ 47%]  (Warmup) \nChain 4 Iteration: 2000 / 4000 [ 50%]  (Warmup) \nChain 4 Iteration: 2001 / 4000 [ 50%]  (Sampling) \nChain 4 Iteration: 2100 / 4000 [ 52%]  (Sampling) \nChain 4 Iteration: 2200 / 4000 [ 55%]  (Sampling) \nChain 4 Iteration: 2300 / 4000 [ 57%]  (Sampling) \nChain 4 Iteration: 2400 / 4000 [ 60%]  (Sampling) \nChain 4 Iteration: 2500 / 4000 [ 62%]  (Sampling) \nChain 4 Iteration: 2600 / 4000 [ 65%]  (Sampling) \nChain 4 Iteration: 2700 / 4000 [ 67%]  (Sampling) \nChain 4 Iteration: 2800 / 4000 [ 70%]  (Sampling) \nChain 4 Iteration: 2900 / 4000 [ 72%]  (Sampling) \nChain 4 Iteration: 3000 / 4000 [ 75%]  (Sampling) \nChain 4 Iteration: 3100 / 4000 [ 77%]  (Sampling) \nChain 4 Iteration: 3200 / 4000 [ 80%]  (Sampling) \nChain 4 Iteration: 3300 / 4000 [ 82%]  (Sampling) \nChain 4 Iteration: 3400 / 4000 [ 85%]  (Sampling) \nChain 4 Iteration: 3500 / 4000 [ 87%]  (Sampling) \nChain 4 Iteration: 3600 / 4000 [ 90%]  (Sampling) \nChain 4 Iteration: 3700 / 4000 [ 92%]  (Sampling) \nChain 4 Iteration: 3800 / 4000 [ 95%]  (Sampling) \nChain 4 Iteration: 3900 / 4000 [ 97%]  (Sampling) \nChain 4 Iteration: 4000 / 4000 [100%]  (Sampling) \nChain 1 finished in 0.0 seconds.\nChain 2 finished in 0.0 seconds.\nChain 3 finished in 0.0 seconds.\nChain 4 finished in 0.0 seconds.\n\nAll 4 chains finished successfully.\nMean chain execution time: 0.0 seconds.\nTotal execution time: 0.2 seconds."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-7",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-7",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel3: change the brms defaults\n\nsummary(Mod_MT3)\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: MarathonTimeM ~ 1 + km4week + sp4week \n   Data: MarathonData (Number of observations: 87) \n  Draws: 4 chains, each with iter = 4000; warmup = 2000; thin = 1;\n         total post-warmup draws = 8000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept   199.15      1.51   196.21   202.14 1.00     8054     5568\nkm4week      -0.42      0.06    -0.53    -0.31 1.00     8127     5617\nsp4week      -9.98      1.29   -12.50    -7.48 1.00     8080     6304\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma    13.92      1.07    12.02    16.22 1.00     7672     5845\n\nDraws were sampled using sample(hmc). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise-8",
+    "href": "Presentations/Part2/Slides_Part2.html#results-exercise-8",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Results Exercise",
+    "text": "Results Exercise\nModel3: change the brms defaults\n\nplot(Mod_MT3)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#about-convergence",
+    "href": "Presentations/Part2/Slides_Part2.html#about-convergence",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "About convergence",
+    "text": "About convergence\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\widehat R\\) &lt; 1.015 for each parameter estimate\nat least 4 chains are recommended\nEffective Sample Size (ESS) &gt; 400 to rely on \\(\\widehat R\\)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#but-is-it-a-good-model",
+    "href": "Presentations/Part2/Slides_Part2.html#but-is-it-a-good-model",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "But is it a good model?",
+    "text": "But is it a good model?\n  Two complementary procedures:  \n\nposterior-predictive check\ncompare models with leave one out cross-validation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior-predictive check",
+    "text": "Posterior-predictive check\nA visual check that can be performed with pp_check() from brms\n\npp_check(Mod_MT2) + theme_minimal()"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior-predictive check",
+    "text": "Posterior-predictive check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation",
+    "href": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Model comparison with loo cross-validation",
+    "text": "Model comparison with loo cross-validation\n\\(\\sim\\) AIC or BIC in Frequentist statistics\n\\(\\widehat{elpd}\\): “expected log predictive density” (higher \\(\\widehat{elpd}\\) implies better model fit without being sensitive for overfitting!)\n\nloo_Mod1 &lt;- loo(MarathonTimes_Mod1)\nloo_Mod2 &lt;- loo(MarathonTimes_Mod2)\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation-output",
+    "href": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Model comparison with loo cross-validation",
+    "text": "Model comparison with loo cross-validation\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
+    "href": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "When to Worry and How to Avoid Misuse of Bayesian Statistics",
+    "text": "When to Worry and How to Avoid Misuse of Bayesian Statistics\nby Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#wambs-template-to-use",
+    "href": "Presentations/Part2/Slides_Part2.html#wambs-template-to-use",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "WAMBS Template to use",
+    "text": "WAMBS Template to use\n\nFile called WAMBS_workflow_MarathonData.qmd (quarto document)\nClick here  for the Quarto version\nCreate your own project and project folder\nCopy the template and rename it\nWe will go through the different parts in the slide show\nYou can apply/adapt the code in the template\nTo render the document properly with references, you also need the references.bib file"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#side-path-projects-in-rstudio-and-the-here-package",
+    "href": "Presentations/Part2/Slides_Part2.html#side-path-projects-in-rstudio-and-the-here-package",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Side-path: projects in RStudio and the here package",
+    "text": "Side-path: projects in RStudio and the here package\nIf you do not know how to use Projects in RStudio or the here package, these two sources might be helpfull:\nProjects: https://youtu.be/MdTtTN8PUqU?si=mmQGlU063EMt86B2\nhere package: https://youtu.be/oh3b3k5uM7E?si=0-heLJXfFVLtTohh"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model",
+    "href": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Preparations for applying it to Marathon model",
+    "text": "Preparations for applying it to Marathon model\nPackages needed:\n\nlibrary(here)\nlibrary(tidyverse)\nlibrary(brms)\nlibrary(bayesplot)\nlibrary(ggmcmc)\nlibrary(patchwork)\nlibrary(priorsense)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model-1",
+    "href": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Preparations for applying it to Marathon model",
+    "text": "Preparations for applying it to Marathon model\nLoad the dataset and the model:\n\nload(\n  file = here(\"Presentations\", \"MarathonData.RData\")\n)\n\nMarathonTimes_Mod2 &lt;-\n  readRDS(file = \n            here(\"Presentations\",\n              \"Output\",\n              \"MarathonTimes_Mod2.RDS\")\n          )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#remember-priors-come-in-many-disguises",
+    "href": "Presentations/Part2/Slides_Part2.html#remember-priors-come-in-many-disguises",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Remember: priors come in many disguises",
+    "text": "Remember: priors come in many disguises\n\n\nUninformative/Weakly informative\nWhen objectivity is crucial and you want let the data speak for itself…\n\nInformative\nWhen including significant information is crucial\n\npreviously collected data\nresults from former research/analyses\ndata of another source\ntheoretical considerations\nelicitation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#brms-defaults",
+    "href": "Presentations/Part2/Slides_Part2.html#brms-defaults",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "brms defaults",
+    "text": "brms defaults\n\nWeakly informative priors\nIf dataset is big, impact of priors is minimal\nBut, always better to know what you are doing!\nComplex models might run into convergence issues \\(\\rightarrow\\) specifying more informative priors might help!\n\nSo, how to deviate from the defaults?"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#check-priors-used-by-brms",
+    "href": "Presentations/Part2/Slides_Part2.html#check-priors-used-by-brms",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Check priors used by brms",
+    "text": "Check priors used by brms\nFunction: get_prior( )\nRemember our model 2 for Marathon Times:\n\\[\\begin{aligned}\n& \\text{MarathonTimeM}_i \\sim N(\\mu,\\sigma_e)\\\\\n& \\mu = \\beta_0 + \\beta_1*\\text{km4week}_i + \\beta_2*\\text{sp4week}_i\n\\end{aligned}\\]\n\nget_prior(\n  MarathonTimeM ~ 1 + km4week + sp4week, \n  data = MarathonData\n)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#check-priors-used-by-brms-1",
+    "href": "Presentations/Part2/Slides_Part2.html#check-priors-used-by-brms-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Check priors used by brms",
+    "text": "Check priors used by brms\n\n\n\n\n\n\n\n\n\n\nprior: type of prior distribution\nclass: parameter class (with b being population-effects)\ncoef: name of the coefficient within parameter class\ngroup: grouping factor for group-level parameters (when using mixed effects models)\nresp : name of the response variable when using multivariate models\nlb & ub: lower and upper bound for parameter restriction"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualizing-priors",
+    "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualizing priors",
+    "text": "Visualizing priors\nThe best way to make sense of the priors used is visualizing them!\nMany options:\n\nThe Zoo of Distributions https://ben18785.shinyapps.io/distribution-zoo/\nmaking your own visualizations\n\nSee WAMBS template!\nThere we demonstrate the use of ggplot2, metRology, ggtext and patchwork to visualize the priors."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1",
+    "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualizing priors",
+    "text": "Visualizing priors\n\nlibrary(metRology)\nlibrary(ggplot2)\nlibrary(ggtext)\nlibrary(patchwork)\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\n# Generate the plot for the prior of the Intercept (mu)\nPrior_mu &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 199.2, sd = 24.9), # \n    xlim = c(120,300)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the intercept\",\n       subtitle = \"student_t(3,199.2,24.9)\")\n\n# Generate the plot for the prior of the error variance (sigma)\nPrior_sigma &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 0, sd = 24.9), # \n    xlim = c(0,6)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the residual variance\",\n       subtitle = \"student_t(3,0,24.9)\")\n\n# Generate the plot for the prior of the effects of independent variables\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 10), # \n    xlim = c(-20,20)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,10)\")\n\nPrior_mu + Prior_sigma + Prior_betas +\n  plot_layout(ncol = 3)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualizing priors",
+    "text": "Visualizing priors\n\n\n\n\nProbability density plots for the different priors used in the example model"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example",
+    "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Understanding priors… another example",
+    "text": "Understanding priors… another example\nExperimental study (pretest - posttest design) with 3 conditions:\n\ncontrol group;\nexperimental group 1;\nexperimental group 2.\n\nModel:\n\\[\\begin{aligned}\n  & Posttest_{i}  \\sim N(\\mu,\\sigma_{e_{i}})\\\\\n  & \\mu = \\beta_0 + \\beta_1*\\text{Pretest}_{i} + \\beta_2*\\text{Exp_cond1}_{i} + \\beta_3*\\text{Exp_cond2}_{i}\n\\end{aligned}\\]\nOur job: coming up with priors that reflect that we expect both conditions to have a positive effect (hypothesis based on literature) and no indications that one experimental condition will outperform the other."
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-1",
+    "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Understanding priors… another example",
+    "text": "Understanding priors… another example\n\nAssuming pre- and posttest scores are standardized\nAssuming no increase between pre- and posttest in control condition"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-2",
+    "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Understanding priors… another example",
+    "text": "Understanding priors… another example\n\nAssuming a strong correlation between pre- and posttest"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-3",
+    "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-3",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Understanding priors… another example",
+    "text": "Understanding priors… another example\n\nAssuming a small effect of experimental conditions\nNo difference between both experimental conditions\n\n\nRemember Cohen’s d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#setting-custom-priors-in-brms",
+    "href": "Presentations/Part2/Slides_Part2.html#setting-custom-priors-in-brms",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Setting custom priors in brms",
+    "text": "Setting custom priors in brms\n\nSetting our custom priors can be done with set_prior( ) command\n\nE.g., change the priors for the beta’s (effects of km4week and sp4week):\n\n\nCustom_priors &lt;- \n  c(\n    set_prior(\n      \"normal(0,10)\", \n      class = \"b\", \n      coef = \"km4week\"),\n    set_prior(\n      \"normal(0,10)\", \n      class = \"b\", \n      coef = \"sp4week\")\n    )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#prior-predictive-check",
+    "href": "Presentations/Part2/Slides_Part2.html#prior-predictive-check",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Prior Predictive Check",
+    "text": "Prior Predictive Check\n\nDid you set sensible priors?\n\n\nSimulate data based on the model and the priors\n\n\n\nVisualize the simulated data and compare with real data\n\n\n\nCheck if the plot shows impossible simulated datasets"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms",
+    "href": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Prior Predictive Check in brms",
+    "text": "Prior Predictive Check in brms\n\nStep 1: Fit the model with custom priors with option sample_prior=\"only\"\n\n\nFit_Model_priors &lt;- \n  brm(\n    MarathonTimeM ~ 1 + km4week + sp4week, \n    data = MarathonData,\n    prior = Custom_priors,\n    backend = \"cmdstanr\",\n    cores = 4,\n    sample_prior = \"only\"\n    )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1",
+    "href": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Prior Predictive Check in brms",
+    "text": "Prior Predictive Check in brms\n\nStep 2: visualize the data with the pp_check( ) function\n\n\nset.seed(1975)\n\npp_check(\n  Fit_Model_priors, \n  ndraws = 300) # number of simulated datasets you wish for"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Prior Predictive Check in brms",
+    "text": "Prior Predictive Check in brms"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics",
+    "href": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Check some summary statistics",
+    "text": "Check some summary statistics\n\nHow are summary statistics of simulated datasets (e.g., median, min, max, …) distributed over the datasets?\nHow does that compare to our real data?\nUse type = \"stat\" argument within pp_check()\n\n\npp_check(Fit_Model_priors, \n         type = \"stat\", \n         stat = \"median\")"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics-output",
+    "href": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Check some summary statistics",
+    "text": "Check some summary statistics"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-1",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nPerform a prior predictive check\nIf necessary re-think your priors and check again"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence",
+    "href": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Does the trace-plot exhibits convergence?",
+    "text": "Does the trace-plot exhibits convergence?\n\nCreate custom trace-plots (aka caterpillar plots) with ggs( ) function from ggmcmc package\n\nModel_chains &lt;- ggs(MarathonTimes_Mod2)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n          \"b_Intercept\", \n          \"b_km4week\", \n          \"b_sp4week\", \n          \"sigma\"\n          )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence-output",
+    "href": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Does the trace-plot exhibits convergence?",
+    "text": "Does the trace-plot exhibits convergence?\n\n\n\n\nCaterpillar plots for the parameters in the model"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
+    "href": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Does convergence remain after doubling the number of iterations?",
+    "text": "Does convergence remain after doubling the number of iterations?\n\nRe-fit the model with more iterations\n\nCheck trace-plots again\n\n\n\n\n\n\n\nWarning\n\n\nFirst consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time…"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-2",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nDo the first checks on the model convergence"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-statistics",
+    "href": "Presentations/Part2/Slides_Part2.html#r-hat-statistics",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "R-hat statistics",
+    "text": "R-hat statistics\nSampling of parameters done by:\n\nmultiple chains\nmultiple iterations within chains\n\nIf variance between chains is big \\(\\rightarrow\\) NO CONVERGENCE\nR-hat (\\(\\widehat{R}\\)) : compares the between- and within-chain estimates for model parameters"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-statistics-1",
+    "href": "Presentations/Part2/Slides_Part2.html#r-hat-statistics-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "R-hat statistics",
+    "text": "R-hat statistics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\\(\\widehat{R}\\) &lt; 1.015 for each parameter estimate\nat least 4 chains are recommended\nEffective Sample Size (ESS) &gt; 400 to rely on \\(\\widehat{R}\\)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms",
+    "href": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "R-hat in brms",
+    "text": "R-hat in brms\nmcmc_rhat() function from the bayesplot package\n\nmcmc_rhat(\n  brms::rhat(MarathonTimes_Mod2), \n  size = 3\n  )+ \n  yaxis_text(hjust = 1)  # to print parameter names"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms-output",
+    "href": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "R-hat in brms",
+    "text": "R-hat in brms"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-3",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-3",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nCheck the R-hat statistics"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#autocorrelation",
+    "href": "Presentations/Part2/Slides_Part2.html#autocorrelation",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Autocorrelation",
+    "text": "Autocorrelation\n\nSampling of parameter values are not independent!\nSo there is autocorrelation\nBut you don’t want too much impact of autocorrelation\n2 approaches to check this:\n\nratio of the effective sample size to the total sample size\nplot degree of autocorrelation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size",
+    "href": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Ratio effective sample size / total sample size",
+    "text": "Ratio effective sample size / total sample size\n\nShould be higher than 0.1 (Gelman et al., 2013)\nVisualize making use of the mcmc_neff( ) function from bayesplot\n\n\nmcmc_neff(\n  neff_ratio(MarathonTimes_Mod2)\n  ) + \n  yaxis_text(hjust = 1)  # to print parameter names"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size-output",
+    "href": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Ratio effective sample size / total sample size",
+    "text": "Ratio effective sample size / total sample size"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation",
+    "href": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot degree of autocorrelation",
+    "text": "Plot degree of autocorrelation\n\nVisualize making use of the mcmc_acf( ) function\n\n\nmcmc_acf(\n  as.array(MarathonTimes_Mod2), \n  regex = \"b\") # to plot only the parameters starting with b (our beta's)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation-output",
+    "href": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot degree of autocorrelation",
+    "text": "Plot degree of autocorrelation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-4",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-4",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nCheck the autocorrelation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#rank-order-plots",
+    "href": "Presentations/Part2/Slides_Part2.html#rank-order-plots",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Rank order plots",
+    "text": "Rank order plots\n\nadditional way to assess the convergence of MCMC\nif the algorithm converged, plots of all chains look similar\n\n\nmcmc_rank_hist(\n  MarathonTimes_Mod2, \n  regex = \"b\" # only intercept and beta's\n  )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#rank-order-plots-output",
+    "href": "Presentations/Part2/Slides_Part2.html#rank-order-plots-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Rank order plots",
+    "text": "Rank order plots"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-5",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-5",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nCheck the rank order plots"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#does-the-posterior-distribution-histogram-have-enough-information",
+    "href": "Presentations/Part2/Slides_Part2.html#does-the-posterior-distribution-histogram-have-enough-information",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Does the posterior distribution histogram have enough information?",
+    "text": "Does the posterior distribution histogram have enough information?\n\nHistogram of posterior for each parameter\nHave clear peak and sliding slopes"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram",
+    "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the posterior distribution histogram",
+    "text": "Plotting the posterior distribution histogram\n\nStep 1: create a new object with ‘draws’ based on the final model\n\n\nposterior_PD &lt;- as_draws_df(MarathonTimes_Mod2)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-1",
+    "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the posterior distribution histogram",
+    "text": "Plotting the posterior distribution histogram\n\nStep 2: create histogram making use of that object\n\n\npost_intercept &lt;- \n  posterior_PD %&gt;%\n  select(b_Intercept) %&gt;%\n  ggplot(aes(x = b_Intercept)) +\n  geom_histogram() +\n  ggtitle(\"Intercept\") \n\npost_km4week &lt;- \n  posterior_PD %&gt;%\n  select(b_km4week) %&gt;%\n  ggplot(aes(x = b_km4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta km4week\") \n\npost_sp4week &lt;- \n  posterior_PD %&gt;%\n  select(b_sp4week) %&gt;%\n  ggplot(aes(x = b_sp4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta sp4week\")"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2",
+    "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the posterior distribution histogram",
+    "text": "Plotting the posterior distribution histogram\n\nStep 3: print the plot making use of patchwork ’s workflow to combine plots \n\npost_intercept + post_km4week + post_sp4week +\n  plot_layout(ncol = 3)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2-output",
+    "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the posterior distribution histogram",
+    "text": "Plotting the posterior distribution histogram"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check\n\nGenerate data based on the posterior probability distribution\nCreate plot of distribution of y-values in these simulated datasets\nOverlay with distribution of observed data\n\nusing pp_check() again, now with our model\n\npp_check(MarathonTimes_Mod2, \n         ndraws = 100)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check\n\nWe can also focus on some summary statistics (like we did with prior predictive checks as well)\n\n\npp_check(MarathonTimes_Mod2, \n         ndraws = 300,\n         type = \"stat\",\n         stat = \"median\")"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-6",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-6",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nFocus on the posterior and do some checks!"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#why-prior-sensibility-analyses",
+    "href": "Presentations/Part2/Slides_Part2.html#why-prior-sensibility-analyses",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Why prior sensibility analyses?",
+    "text": "Why prior sensibility analyses?\n\nOften we rely on ‘arbitrary’ chosen (default) weakly informative priors\nWhat is the influence of the prior (and the likelihood) on our results?\nYou could ad hoc set new priors and re-run the analyses and compare (a lot of work, without strict sytematical guidelines)\nSemi-automated checks can be done with priorsense package"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#using-the-priorsense-package",
+    "href": "Presentations/Part2/Slides_Part2.html#using-the-priorsense-package",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Using the priorsense package",
+    "text": "Using the priorsense package\nRecently a package dedicated to prior sensibility analyses is launched\n\n# install.packages(\"remotes\")\nremotes::install_github(\"n-kall/priorsense\")\n\nKey-idea: power-scaling (both prior and likelihood)\nbackground reading:\n\nhttps://arxiv.org/pdf/2107.14054.pdf\n\nYouTube talk:\n\nhttps://www.youtube.com/watch?v=TBXD3HjcIps&t=920s"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices",
+    "href": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Basic table with indices",
+    "text": "Basic table with indices\nFirst check is done by using the powerscale_sensitivity( ) function\n\ncolumn prior contains info on sensibility for prior (should be lower than 0.05)\ncolumn likelihood contains info on sensibility for likelihood (that we want to be high, ‘let our data speak’)\ncolumn diagnosis is a verbalization of potential problem (- if none)\n\n\npowerscale_sensitivity(MarathonTimes_Mod2)"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices-output",
+    "href": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Basic table with indices",
+    "text": "Basic table with indices\n\nSensitivity based on cjs_dist:\n# A tibble: 4 × 4\n  variable       prior likelihood diagnosis\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n1 b_Intercept 0.000853     0.0851 -        \n2 b_km4week   0.000512     0.0802 -        \n3 b_sp4week   0.000370     0.0831 -        \n4 sigma       0.00571      0.151  -"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility\n\npowerscale_plot_dens(\n  powerscale_sequence(\n    MarathonTimes_Mod2\n    ),\n  variables = c(\n      \"b_Intercept\",\n      \"b_km4week\",\n      \"b_sp4week\"\n    )\n  )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility\n\npowerscale_plot_quantities(\n  powerscale_sequence(\n    MarathonTimes_Mod2\n    ),\n  variables = c(\n      \"b_km4week\"\n      )\n  )"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-7",
+    "href": "Presentations/Part2/Slides_Part2.html#your-turn-7",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nYour data and model\nCheck the prior sensibility of your results"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\nI wish you a pleasant learning journey!",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About me",
+    "section": "Contact",
+    "text": "Contact\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
+    "objectID": "WAMBS.html",
+    "href": "WAMBS.html",
+    "title": "WAMBS template",
+    "section": "",
+    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
+    "crumbs": [
+      "WAMBS template"
+    ]
+  },
+  {
+    "objectID": "WAMBS.html#info",
+    "href": "WAMBS.html#info",
+    "title": "WAMBS template",
+    "section": "",
+    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
+    "crumbs": [
+      "WAMBS template"
+    ]
+  },
+  {
+    "objectID": "WAMBS.html#references-and-resources",
+    "href": "WAMBS.html#references-and-resources",
+    "title": "WAMBS template",
+    "section": "References and resources",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.",
+    "crumbs": [
+      "WAMBS template"
+    ]
+  },
+  {
+    "objectID": "Day3.html",
+    "href": "Day3.html",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#outline",
+    "href": "Day3.html#outline",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day3.html#references-and-resources",
+    "href": "Day3.html#references-and-resources",
+    "title": "Day 3: Reporting and visualizing",
+    "section": "References and resources",
+    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
+    "crumbs": [
+      "Day3"
+    ]
+  },
+  {
+    "objectID": "Day1.html",
+    "href": "Day1.html",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "",
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#outline",
+    "href": "Day1.html#outline",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "",
+    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#materials",
+    "href": "Day1.html#materials",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "Day1.html#references-and-resources",
+    "href": "Day1.html#references-and-resources",
+    "title": "Day 1: the prior, the likelihood, and the posterior",
+    "section": "References and resources",
+    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
+    "crumbs": [
+      "Day1"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Applied Bayesian Analyses with R (Turku 2025)",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (10-12 am)\nPub209\n\n\nWednesday 11th of June (10-12 am)\nPub209\n\n\nFriday 13th of June (10-12 am)\nPub209\n\n\nMonday 16th of June (9-11 am)\nPub209\n\n\n\nThis site bundles all the material used for the course. Or you can download all the materials on the github page .",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html",
+    "href": "Prerequisites/Prerequisites.html",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "",
+    "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
+    "href": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "CmdStan & CmdStanR",
+    "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#brms",
+    "href": "Prerequisites/Prerequisites.html#brms",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "brms",
+    "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#tidyverse",
+    "href": "Prerequisites/Prerequisites.html#tidyverse",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "tidyverse",
+    "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#ggplot2",
+    "href": "Prerequisites/Prerequisites.html#ggplot2",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "ggplot2",
+    "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#patchwork",
+    "href": "Prerequisites/Prerequisites.html#patchwork",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "patchwork",
+    "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#tidybayes",
+    "href": "Prerequisites/Prerequisites.html#tidybayes",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "tidybayes",
+    "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#bayesplot",
+    "href": "Prerequisites/Prerequisites.html#bayesplot",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "bayesplot",
+    "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2).",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#the-pipe",
+    "href": "Prerequisites/Prerequisites.html#the-pipe",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "The pipe",
+    "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#dplyr-verbs",
+    "href": "Prerequisites/Prerequisites.html#dplyr-verbs",
+    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "section": "dplyr verbs",
+    "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Day2.html",
+    "href": "Day2.html",
+    "title": "Day 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#outline",
+    "href": "Day2.html#outline",
+    "title": "Day 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#materials",
+    "href": "Day2.html#materials",
+    "title": "Day 2: the WAMBS",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day2.html#references-and-resources",
+    "href": "Day2.html#references-and-resources",
+    "title": "Day 2: the WAMBS",
+    "section": "References and resources",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
+    "crumbs": [
+      "Day2"
+    ]
+  },
+  {
+    "objectID": "Day4.html",
+    "href": "Day4.html",
+    "title": "Day 4",
+    "section": "",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
+    "crumbs": [
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Day4.html#outline",
+    "href": "Day4.html#outline",
+    "title": "Day 4",
+    "section": "",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
+    "crumbs": [
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Day4.html#integrated-exercise",
+    "href": "Day4.html#integrated-exercise",
+    "title": "Day 4",
+    "section": "Integrated exercise",
+    "text": "Integrated exercise\nOn the following page you can find an html file with the tasks for this exercise: click here\nThe dataset for this exercise can be downloaded here: Subtitles.RData\nIf you are stuck while making this exercise, you can consult an example response here",
+    "crumbs": [
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Day4.html#references-and-resources",
+    "href": "Day4.html#references-and-resources",
+    "title": "Day 4",
+    "section": "References and resources",
+    "text": "References and resources\nThe data for the exercise is a simulated dataset based on the following study:\nFrumuselu, Anca Daniela, Sven De Maeyer, Vincent Donche, and María del Mar Gutiérrez Colon Plana. 2015. “Television Series Inside the EFL Classroom: Bridging the Gap Between Teaching and Learning Informal Language Through Subtitles.” Linguistics and Education 32 (December): 107–17. https://doi.org/10.1016/j.linged.2015.10.001.",
+    "crumbs": [
+      "Day4"
+    ]
+  },
+  {
+    "objectID": "Links.html",
+    "href": "Links.html",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#reading-tips",
+    "href": "Links.html#reading-tips",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-free-online-books",
+    "href": "Links.html#some-free-online-books",
+    "title": "Links",
+    "section": "Some free online books ",
+    "text": "Some free online books \n\nJohn Kruschke’s book Doing Bayesian Data Analyses: a tutorial with R, Jags, and Stan :\n\nhttps://nyu-cdsc.github.io/learningr/assets/kruschke_bayesian_in_R.pdf\n\nBayes Rules!:\n\nhttps://www.bayesrulesbook.com/\n\nOr this book:\n\n https://vasishth.github.io/bayescogsci/book/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#the-podcast",
+    "href": "Links.html#the-podcast",
+    "title": "Links",
+    "section": "THE Podcast ",
+    "text": "THE Podcast \nIf you like running - like I do - this could be a great companion on your run! In this podcast different guests from different backgrounds discuss the power and reasoning behind Bayesian analyses and how Bayesian statistics are used in their field from Astronomy, over Psychology to Sports Analyses (and many more).\nhttps://www.learnbayesstats.com/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#online-learning-material",
+    "href": "Links.html#online-learning-material",
+    "title": "Links",
+    "section": "Online learning material",
+    "text": "Online learning material\nThe research group of Rens van de Schoot (Utrecht University) publishes a lot on Bayesian statistics. They also developed a summer school. Their materials are also openly available at (you will notice how their way of sharing materials has inspired me :-))\nhttps://utrechtuniversity.github.io/BayesianEstimation/#quick-overview",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-example-papers",
+    "href": "Links.html#some-example-papers",
+    "title": "Links",
+    "section": "Some example papers",
+    "text": "Some example papers\nHere are some references to articles reporting on Bayesian analyses.\nGijsen, M., Catrysse, L., De Maeyer, S., & Gijbels, D. (2024). Mapping cognitive processes in video-based learning by combining trace and think-aloud data. Learning and Instruction, 90, 101851. https://doi.org/10.1016/j.learninstruc.2023.101851 \nRoeser, J., De Maeyer, S., Leijten, M., & Van Waes, L. (2021). Modelling typing disfluencies as finite mixture process. Reading and Writing.  https://doi.org/10.1007/s11145-021-10203-z",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#article-on-bayesian-evidence-interval",
+    "href": "Links.html#article-on-bayesian-evidence-interval",
+    "title": "Links",
+    "section": "Article on Bayesian Evidence Interval",
+    "text": "Article on Bayesian Evidence Interval\nDuring the course I mentioned a paper that criticises the ROPE + HDI rule and proposes an alternative for making decisions on hypotheses in the Bayesian realm. This is the reference:\nKelter, R. (2022), The evidence interval and the Bayesian evidence value: On a unified theory for Bayesian hypothesis testing and interval estimation. Br J Math Stat Psychol, 75: 550-592.\n https://doi.org/10.1111/bmsp.12267",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
     "objectID": "Presentations/Part1/Slides_Part1.html#welcome",
     "href": "Presentations/Part1/Slides_Part1.html#welcome",
     "title": "Applied Bayesian Analyses in R",
@@ -319,7 +1258,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#results-exercise",
     "title": "Applied Bayesian Analyses in R",
     "section": "Results Exercise",
-    "text": "Results Exercise\nModel1: only an intercept (brms defaults)\n\nload(file = here(\n    \"Presentations\",\n    \"MarathonData.RData\")\n    )\n\nMod_MT1 &lt;- brm(                        \n  MarathonTimeM ~ 1, \n  data = MarathonData,   \n  backend = \"cmdstanr\",\n  seed = 1975           \n)\n\nRunning MCMC with 4 sequential chains...\n\nChain 1 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 1 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 1 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 1 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 1 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 1 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 1 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 1 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 1 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 1 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 1 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 1 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 1 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 1 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 1 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 1 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 1 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 1 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 1 finished in 0.0 seconds.\nChain 2 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 2 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 2 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 2 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 2 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 2 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 2 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 2 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 2 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 2 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 2 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 2 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 2 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 2 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 2 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 2 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 2 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 2 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 2 finished in 0.0 seconds.\nChain 3 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 3 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 3 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 3 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 3 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 3 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 3 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 3 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 3 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 3 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 3 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 3 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 3 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 3 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 3 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 3 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 3 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 3 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 3 finished in 0.0 seconds.\nChain 4 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 4 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 4 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 4 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 4 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 4 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 4 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 4 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 4 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 4 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 4 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 4 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 4 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 4 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 4 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 4 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 4 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 4 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 4 finished in 0.0 seconds.\n\nAll 4 chains finished successfully.\nMean chain execution time: 0.0 seconds.\nTotal execution time: 0.5 seconds."
+    "text": "Results Exercise\nModel1: only an intercept (brms defaults)\n\nload(file = here(\n    \"Presentations\",\n    \"MarathonData.RData\")\n    )\n\nMod_MT1 &lt;- brm(                        \n  MarathonTimeM ~ 1, \n  data = MarathonData,   \n  backend = \"cmdstanr\",\n  seed = 1975           \n)\n\nRunning MCMC with 4 sequential chains...\n\nChain 1 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 1 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 1 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 1 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 1 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 1 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 1 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 1 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 1 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 1 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 1 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 1 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 1 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 1 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 1 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 1 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 1 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 1 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 1 finished in 0.0 seconds.\nChain 2 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 2 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 2 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 2 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 2 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 2 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 2 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 2 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 2 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 2 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 2 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 2 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 2 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 2 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 2 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 2 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 2 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 2 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 2 finished in 0.0 seconds.\nChain 3 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 3 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 3 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 3 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 3 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 3 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 3 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 3 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 3 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 3 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 3 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 3 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 3 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 3 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 3 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 3 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 3 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 3 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 3 finished in 0.0 seconds.\nChain 4 Iteration:    1 / 2000 [  0%]  (Warmup) \nChain 4 Iteration:  100 / 2000 [  5%]  (Warmup) \nChain 4 Iteration:  200 / 2000 [ 10%]  (Warmup) \nChain 4 Iteration:  300 / 2000 [ 15%]  (Warmup) \nChain 4 Iteration:  400 / 2000 [ 20%]  (Warmup) \nChain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) \nChain 4 Iteration:  600 / 2000 [ 30%]  (Warmup) \nChain 4 Iteration:  700 / 2000 [ 35%]  (Warmup) \nChain 4 Iteration:  800 / 2000 [ 40%]  (Warmup) \nChain 4 Iteration:  900 / 2000 [ 45%]  (Warmup) \nChain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) \nChain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) \nChain 4 Iteration: 1100 / 2000 [ 55%]  (Sampling) \nChain 4 Iteration: 1200 / 2000 [ 60%]  (Sampling) \nChain 4 Iteration: 1300 / 2000 [ 65%]  (Sampling) \nChain 4 Iteration: 1400 / 2000 [ 70%]  (Sampling) \nChain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) \nChain 4 Iteration: 1600 / 2000 [ 80%]  (Sampling) \nChain 4 Iteration: 1700 / 2000 [ 85%]  (Sampling) \nChain 4 Iteration: 1800 / 2000 [ 90%]  (Sampling) \nChain 4 Iteration: 1900 / 2000 [ 95%]  (Sampling) \nChain 4 Iteration: 2000 / 2000 [100%]  (Sampling) \nChain 4 finished in 0.0 seconds.\n\nAll 4 chains finished successfully.\nMean chain execution time: 0.0 seconds.\nTotal execution time: 0.6 seconds."
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#results-exercise-1",
@@ -453,406 +1392,6 @@
     "title": "Applied Bayesian Analyses in R",
     "section": "Mixed effects models",
     "text": "Mixed effects models\n\nbrms can estimate models for more complex designs like multilevel models or more generally mixed effects models\n Random intercepts…\n\nModX &lt;- brm(                        \n  Y ~ 1 + x + \n    (1 | Groupvariable), \n  ...\n)\n\nRandom intercepts and slopes…\n\nModX &lt;- brm(                        \n  Y ~ 1 + x + \n    (1 + x | Groupvariable), \n  ...\n)"
-  },
-  {
-    "objectID": "Links.html",
-    "href": "Links.html",
-    "title": "Links",
-    "section": "",
-    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#reading-tips",
-    "href": "Links.html#reading-tips",
-    "title": "Links",
-    "section": "",
-    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#some-free-online-books",
-    "href": "Links.html#some-free-online-books",
-    "title": "Links",
-    "section": "Some free online books ",
-    "text": "Some free online books \n\nJohn Kruschke’s book Doing Bayesian Data Analyses: a tutorial with R, Jags, and Stan :\n\nhttps://nyu-cdsc.github.io/learningr/assets/kruschke_bayesian_in_R.pdf\n\nBayes Rules!:\n\nhttps://www.bayesrulesbook.com/\n\nOr this book:\n\n https://vasishth.github.io/bayescogsci/book/",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#the-podcast",
-    "href": "Links.html#the-podcast",
-    "title": "Links",
-    "section": "THE Podcast ",
-    "text": "THE Podcast \nIf you like running - like I do - this could be a great companion on your run! In this podcast different guests from different backgrounds discuss the power and reasoning behind Bayesian analyses and how Bayesian statistics are used in their field from Astronomy, over Psychology to Sports Analyses (and many more).\nhttps://www.learnbayesstats.com/",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#online-learning-material",
-    "href": "Links.html#online-learning-material",
-    "title": "Links",
-    "section": "Online learning material",
-    "text": "Online learning material\nThe research group of Rens van de Schoot (Utrecht University) publishes a lot on Bayesian statistics. They also developed a summer school. Their materials are also openly available at (you will notice how their way of sharing materials has inspired me :-))\nhttps://utrechtuniversity.github.io/BayesianEstimation/#quick-overview",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#some-example-papers",
-    "href": "Links.html#some-example-papers",
-    "title": "Links",
-    "section": "Some example papers",
-    "text": "Some example papers\nHere are some references to articles reporting on Bayesian analyses.\nGijsen, M., Catrysse, L., De Maeyer, S., & Gijbels, D. (2024). Mapping cognitive processes in video-based learning by combining trace and think-aloud data. Learning and Instruction, 90, 101851. https://doi.org/10.1016/j.learninstruc.2023.101851 \nRoeser, J., De Maeyer, S., Leijten, M., & Van Waes, L. (2021). Modelling typing disfluencies as finite mixture process. Reading and Writing.  https://doi.org/10.1007/s11145-021-10203-z",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Links.html#article-on-bayesian-evidence-interval",
-    "href": "Links.html#article-on-bayesian-evidence-interval",
-    "title": "Links",
-    "section": "Article on Bayesian Evidence Interval",
-    "text": "Article on Bayesian Evidence Interval\nDuring the course I mentioned a paper that criticises the ROPE + HDI rule and proposes an alternative for making decisions on hypotheses in the Bayesian realm. This is the reference:\nKelter, R. (2022), The evidence interval and the Bayesian evidence value: On a unified theory for Bayesian hypothesis testing and interval estimation. Br J Math Stat Psychol, 75: 550-592.\n https://doi.org/10.1111/bmsp.12267",
-    "crumbs": [
-      "Links"
-    ]
-  },
-  {
-    "objectID": "Day4.html",
-    "href": "Day4.html",
-    "title": "Day 4",
-    "section": "",
-    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
-    "crumbs": [
-      "Day4"
-    ]
-  },
-  {
-    "objectID": "Day4.html#outline",
-    "href": "Day4.html#outline",
-    "title": "Day 4",
-    "section": "",
-    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
-    "crumbs": [
-      "Day4"
-    ]
-  },
-  {
-    "objectID": "Day4.html#integrated-exercise",
-    "href": "Day4.html#integrated-exercise",
-    "title": "Day 4",
-    "section": "Integrated exercise",
-    "text": "Integrated exercise\nOn the following page you can find an html file with the tasks for this exercise: click here\nThe dataset for this exercise can be downloaded here: Subtitles.RData\nIf you are stuck while making this exercise, you can consult an example response here",
-    "crumbs": [
-      "Day4"
-    ]
-  },
-  {
-    "objectID": "Day4.html#references-and-resources",
-    "href": "Day4.html#references-and-resources",
-    "title": "Day 4",
-    "section": "References and resources",
-    "text": "References and resources\nThe data for the exercise is a simulated dataset based on the following study:\nFrumuselu, Anca Daniela, Sven De Maeyer, Vincent Donche, and María del Mar Gutiérrez Colon Plana. 2015. “Television Series Inside the EFL Classroom: Bridging the Gap Between Teaching and Learning Informal Language Through Subtitles.” Linguistics and Education 32 (December): 107–17. https://doi.org/10.1016/j.linged.2015.10.001.",
-    "crumbs": [
-      "Day4"
-    ]
-  },
-  {
-    "objectID": "Day2.html",
-    "href": "Day2.html",
-    "title": "Day 2: the WAMBS",
-    "section": "",
-    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
-    "crumbs": [
-      "Day2"
-    ]
-  },
-  {
-    "objectID": "Day2.html#outline",
-    "href": "Day2.html#outline",
-    "title": "Day 2: the WAMBS",
-    "section": "",
-    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
-    "crumbs": [
-      "Day2"
-    ]
-  },
-  {
-    "objectID": "Day2.html#materials",
-    "href": "Day2.html#materials",
-    "title": "Day 2: the WAMBS",
-    "section": "Materials",
-    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
-    "crumbs": [
-      "Day2"
-    ]
-  },
-  {
-    "objectID": "Day2.html#references-and-resources",
-    "href": "Day2.html#references-and-resources",
-    "title": "Day 2: the WAMBS",
-    "section": "References and resources",
-    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
-    "crumbs": [
-      "Day2"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html",
-    "href": "Prerequisites/Prerequisites.html",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "",
-    "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare.",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
-    "href": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "CmdStan & CmdStanR",
-    "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation.",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#brms",
-    "href": "Prerequisites/Prerequisites.html#brms",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "brms",
-    "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#tidyverse",
-    "href": "Prerequisites/Prerequisites.html#tidyverse",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "tidyverse",
-    "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#ggplot2",
-    "href": "Prerequisites/Prerequisites.html#ggplot2",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "ggplot2",
-    "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#patchwork",
-    "href": "Prerequisites/Prerequisites.html#patchwork",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "patchwork",
-    "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own.",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#tidybayes",
-    "href": "Prerequisites/Prerequisites.html#tidybayes",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "tidybayes",
-    "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses.",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#bayesplot",
-    "href": "Prerequisites/Prerequisites.html#bayesplot",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "bayesplot",
-    "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2).",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#the-pipe",
-    "href": "Prerequisites/Prerequisites.html#the-pipe",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "The pipe",
-    "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "Prerequisites/Prerequisites.html#dplyr-verbs",
-    "href": "Prerequisites/Prerequisites.html#dplyr-verbs",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
-    "section": "dplyr verbs",
-    "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()",
-    "crumbs": [
-      "Prerequisites"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
-    "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
-    "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Applied Bayesian Analyses with R (Turku 2025)",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nMonday 9th of June (10-12 am)\nPub209\n\n\nWednesday 11th of June (10-12 am)\nPub209\n\n\nFriday 13th of June (10-12 am)\nPub209\n\n\nMonday 16th of June (9-11 am)\nPub209\n\n\n\nThis site bundles all the material used for the course. Or you can download all the materials on the github page .",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "Day1.html",
-    "href": "Day1.html",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day1.html#outline",
-    "href": "Day1.html#outline",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "",
-    "text": "In the first part, we will introduce the basic rationale behind Bayesian statistics. We start by explaining the three key components of a Bayesian model: the prior, the likelihood, and the posterior.\nThen, we switch to the estimation of parameters by first introducing the basic idea of grid approximation and then outlining the basic idea of MCMC sampling.\nAt the end of the session we introduce brms and learn how to estimate a simple regression model with brms and just use the summary() and plot() functions to get insight in the model results.",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day1.html#materials",
-    "href": "Day1.html#materials",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "Materials",
-    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this first part can be found here\n\n\nData\nFor this first part, we use a straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day1.html#references-and-resources",
-    "href": "Day1.html#references-and-resources",
-    "title": "Day 1: the prior, the likelihood, and the posterior",
-    "section": "References and resources",
-    "text": "References and resources\nData comes from Kaggle\nPaul Bürkner’s presentation available on YouTube: click here\nInteractive tool demonstrating MCMC sampling:  click here \nbrms homepage:  click here",
-    "crumbs": [
-      "Day1"
-    ]
-  },
-  {
-    "objectID": "Day3.html",
-    "href": "Day3.html",
-    "title": "Day 3: Reporting and visualizing",
-    "section": "",
-    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
-    "crumbs": [
-      "Day3"
-    ]
-  },
-  {
-    "objectID": "Day3.html#outline",
-    "href": "Day3.html#outline",
-    "title": "Day 3: Reporting and visualizing",
-    "section": "",
-    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
-    "crumbs": [
-      "Day3"
-    ]
-  },
-  {
-    "objectID": "Day3.html#references-and-resources",
-    "href": "Day3.html#references-and-resources",
-    "title": "Day 3: Reporting and visualizing",
-    "section": "References and resources",
-    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
-    "crumbs": [
-      "Day3"
-    ]
-  },
-  {
-    "objectID": "WAMBS.html",
-    "href": "WAMBS.html",
-    "title": "WAMBS template",
-    "section": "",
-    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
-    "crumbs": [
-      "WAMBS template"
-    ]
-  },
-  {
-    "objectID": "WAMBS.html#info",
-    "href": "WAMBS.html#info",
-    "title": "WAMBS template",
-    "section": "",
-    "text": "During the course we introduced the WAMBS (when to Worry and how to Avoid the Misuse of Bayesian Statistics) check-list as a tool to structure your thinking and checking of your Bayesian model(s).\nTo see an example of this WAMBS checklist applied to the final model on the Marathon Data click here.\nThe Quarto document to make this report can be found here (right-click to save).\nIf you want to render the Quarto document and have the references in there, you also need to download the references.bib file and store it in the same folder as the Quarto document. The references file can be downloaded here (right-click to save).",
-    "crumbs": [
-      "WAMBS template"
-    ]
-  },
-  {
-    "objectID": "WAMBS.html#references-and-resources",
-    "href": "WAMBS.html#references-and-resources",
-    "title": "WAMBS template",
-    "section": "References and resources",
-    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.",
-    "crumbs": [
-      "WAMBS template"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About me",
-    "section": "",
-    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\nI wish you a pleasant learning journey!",
-    "crumbs": [
-      "About me"
-    ]
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About me",
-    "section": "Contact",
-    "text": "Contact\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be",
-    "crumbs": [
-      "About me"
-    ]
   },
   {
     "objectID": "Integrated_exercise/Exercise.html",
