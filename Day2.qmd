@@ -27,4 +27,4 @@ See the WAMBS page on this website for the template we use.
 
 Alternative for the WAMBS is the BARG:
 
-Kruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. <a href=https://doi.org/10.1038/s41562-021-01177-7" target="blank">https://doi.org/10.1038/s41562-021-01177-7 </a>
+Kruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. <a href=https://doi.org/10.1038/s41562-021-01177-7 target="blank">https://doi.org/10.1038/s41562-021-01177-7 </a>
