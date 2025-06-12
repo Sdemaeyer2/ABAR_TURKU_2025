@@ -60,13 +60,6 @@
     "href": "Presentations/Part3/Slides_Part3.html#divergent-transitions-1",
     "title": "Applied Bayesian Analyses in R",
     "section": "Divergent transitions…",
-    "text": "Divergent transitions…"
-  },
-  {
-    "objectID": "Presentations/Part3/Slides_Part3.html#divergent-transitions-2",
-    "href": "Presentations/Part3/Slides_Part3.html#divergent-transitions-2",
-    "title": "Applied Bayesian Analyses in R",
-    "section": "Divergent transitions…",
     "text": "Divergent transitions…\n\nSomething to worry about!\nEssentially: sampling of parameter estimate values went wrong\nFixes:\n\nsometimes fine-tuning the sampling algorithm (e.g., control = list(adapt_delta = 0.9)) works\nsometimes you need more informative priors\nsometimes the model is just not a good model"
   },
   {

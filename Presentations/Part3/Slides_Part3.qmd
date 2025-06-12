@@ -89,7 +89,7 @@ knitr::include_graphics(here("Presentations", "Part3","WritingDataDesc.jpg"))
 
 ![Exploring the parameter space...](ChatGPT_explorer.png){fig-align="center"}
 
-## Divergent transitions...
+## 
 
 ::: center
 ```{r}
@@ -143,6 +143,8 @@ fig <- fig %>%
     zaxis = list(title = "Height (posterior density)")
   ),
   title = "3D-visualisation of MCMC-sampling by multiple Explorers")
+
+fig <- fig %>% layout(width = 900, height = 600)
 
 fig
 
