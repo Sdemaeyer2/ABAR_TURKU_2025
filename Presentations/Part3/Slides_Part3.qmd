@@ -62,7 +62,7 @@ theme_set(theme_linedraw() +
     -   Experimental condition (Observational learning)
 
 ```{r, out.height = "50%", out.width="50%", echo = FALSE}
-knitr::include_graphics("WritingDataDesc.jpg")
+knitr::include_graphics(here("Presentations", "Part3","WritingDataDesc.jpg"))
 ```
 
 ## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
@@ -83,6 +83,70 @@ knitr::include_graphics("WritingDataDesc.jpg")
 
 ::: aside
 [Note:]{style="color: white"} `FirstVersion_GM`[is the score of the pretest centred around the mean, so a score 0 for this variable implies scoring on average for the pretest]{style="color: white"}
+:::
+
+## Divergent transitions...
+
+![Exploring the parameter space...](ChatGPT_explorer.png){fig-align="center"}
+
+## Divergent transitions...
+
+::: center
+```{r}
+#| eval: true
+#| warning: false
+#| message: false
+#| echo: false
+
+library(plotly)
+library(dplyr)
+
+# Create data for a 3D valley
+set.seed(123)
+x <- seq(-5, 5, length.out = 50)
+y <- seq(-5, 5, length.out = 50)
+grid <- expand.grid(x = x, y = y)
+grid$height <- with(grid, 10 - sqrt(x^2 + y^2) + rnorm(length(x), 0, 0.5))
+
+# Meetpunten van drie verschillende ontdekkingsreizigers in 3D
+Explorers <- data.frame(
+  Explorer = rep(c("A", "B", "C"), each = 6),
+  x = c(-4, -3, -2, -1, 0, 1,
+        4, 3, 2, 1, 0, -1,
+        0, -1, -2, -3, -4, -5),
+  y = c(-4, -3, -1.5, 0, 1, 2,
+        4, 3.5, 2.5, 1.5, 0.5, -0.5,
+        -4, -3, -2, -1, 0, 1)
+)
+Explorers$height <- 10 - sqrt(Explorers$x^2 + Explorers$y^2)
+
+Colors <- c("A" = "red", "B" = "blue", "C" = "black")
+
+# Maak 3D-plot
+fig <- plot_ly(x = ~grid$x, y = ~grid$y, z = ~grid$height,
+               type = 'mesh3d', opacity = 0.4, colorscale = 'Viridis')
+
+for(o in unique(Explorers$Explorer)) {
+  subset <- Explorers %>% filter(Explorer == o)
+  fig <- fig %>%
+    add_trace(data = subset, x = ~x, y = ~y, z = ~height,
+              type = 'scatter3d', mode = 'lines+markers',
+              line = list(width = 4, color = Colors[o]),
+              marker = list(size = 4, color = Colors[o]),
+              name = paste("Explorer", o))
+}
+
+fig <- fig %>%
+  layout(scene = list(
+    xaxis = list(title = "Parameter X"),
+    yaxis = list(title = "Parameter Y"),
+    zaxis = list(title = "Height (posterior density)")
+  ),
+  title = "3D-visualisation of MCMC-sampling by multiple Explorers")
+
+fig
+
+```
 :::
 
 ## Divergent transitions...
@@ -233,7 +297,7 @@ head(posterior_PD)
 
 ## Use draws to create a plot using `ggdist` geoms
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 ```{r, out.height = "98%", out.width="98%", echo = FALSE}
 knitr::include_graphics("ggdist_geoms.jpg")
@@ -243,7 +307,7 @@ knitr::include_graphics("ggdist_geoms.jpg")
 ::: {.column width="40%"}
 `ggdist` package has a set of functions to visualize a distribution
 :::
-:::
+:::::
 
 ## An example
 
@@ -695,7 +759,7 @@ P1
 
 ## Credible Intervals
 
-::: columns
+::::: columns
 ::: {.column width="60%"}
 ```{r}
 # Generate a gamma distribution (that is skew)
@@ -734,11 +798,11 @@ posterior %>%
 
 -   HDI: Highest Density Interval
 :::
-:::
+:::::
 
 ## Concept of ROPE
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 ```{r, out.height = "99%", out.width="99%", echo = FALSE}
 knitr::include_graphics("Kruchke_2018.jpg")
@@ -756,11 +820,11 @@ knitr::include_graphics("Kruchke_2018.jpg")
 
 -   all parameter values in that range are set equal to [no effect]{style="color: red"}
 :::
-:::
+:::::
 
 ## ROPE + HDI
 
-::: columns
+::::: columns
 ::: {.column width="40%"}
 ```{r, out.height = "99%", out.width="99%", echo = FALSE}
 knitr::include_graphics("Kruchke_2018.jpg")
@@ -778,7 +842,7 @@ knitr::include_graphics("Kruchke_2018.jpg")
 
 -   95% of HDI partially out of ROPE $\rightarrow$ undecided
 :::
-:::
+:::::
 
 ## Applying the HDI + ROPE rule with `bayestestR` package
 
