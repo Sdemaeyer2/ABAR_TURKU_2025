@@ -1066,7 +1066,7 @@ powerscale_plot_dens(
   powerscale_sequence(
     MarathonTimes_Mod2
     ),
-  variables = c(
+  variable = c(
       "b_Intercept",
       "b_km4week",
       "b_sp4week"
@@ -1087,7 +1087,7 @@ powerscale_plot_quantities(
   powerscale_sequence(
     MarathonTimes_Mod2
     ),
-  variables = c(
+  variable = c(
       "b_km4week"
       )
   )
